@@ -1,0 +1,130 @@
+.btn {
+  &,
+  &:link, 
+  &:visited{
+    text-decoration: none;
+    padding: 1.6rem 2.6rem;
+    font-size: 2.1rem;
+    color: $white;
+    display: inline-block;
+    transition: all 0.2s;
+    position: relative;
+    border-radius: 0.8rem;
+    font-family: "fira-sans-condensed", sans-serif;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+
+  }
+
+
+}
+
+.btn-primary {
+  background-color: $primary;
+}
+
+.btn-primary-grad {
+  background: linear-gradient(0deg, darken($primary, 10%), lighten($primary, 15%));
+}
+
+
+.btn-secondary {
+  background-color: $secondary;
+}
+
+.btn-secondary-grad {
+  background: linear-gradient(35deg, darken($secondary, 15%), lighten($secondary, 15%));
+}
+
+.btn-thirdcolor {
+  background-color: $thirdcolor;
+}
+
+.btn-thirdcolor-grad {
+  background: linear-gradient(0deg, darken($thirdcolor, 5%), lighten($thirdcolor, 5%));
+}
+
+
+.btn-danger {
+  background-color: $danger;
+}
+
+.scroll-btn {
+    position: fixed;
+    right: 5.8rem;
+    bottom: 4.5rem;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+    color: #949db6;
+    padding: 0.75rem;
+    border-radius: 50%;
+    align-items: center;
+    cursor: pointer;
+    background-image: none;
+    border-width: 2px;
+    border-style: none;
+    border-color: navajowhite;
+    border-image: initial;
+    font-size: 2.8rem;
+    display: inline-flex;
+    -webkit-appearance: button;
+    background: linear-gradient(to bottom, white 0%, #d3dee8 100%);
+    outline-offset: 0;
+    outline: solid 3px rgba(214,214,231,0.50);
+    z-index: 6000;
+    box-shadow: inset 0 0 3px 4px rgb(207,210,214);
+
+    &:focus {
+      outline: solid 3px rgba(214, 214, 231, 0.50);
+      outline-offset: 5px;
+      color: #949db6;
+    }
+
+    &:hover {
+      outline: solid 3px rgba(214, 214, 231, 1);
+      outline-offset: 5px;
+      color: #003ad8;
+    }
+
+    @include respond($bp-medium) {
+      right: 2rem;
+    }
+}
+
+.scroll-btn-serach-overlay {
+  position: sticky;
+  left: 95%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.photo-btn {
+  position: relative;
+  display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-align: center;
+  padding-top: 10%;
+  padding-bottom: 10%;
+
+  .bnt-heading {
+    position: relative;
+    z-index: 20;
+    margin: auto;
+    font-size: 5rem;
+    color: $thirdcolor;
+    max-width: 80%;
+  }
+
+  .photo-btn-bg {
+    position: absolute;
+    height: 100% !important;
+    object-fit: cover;
+    top: 0
+  }
+
+  @include overlay(rgb(0 0 0 / 55%));
+}

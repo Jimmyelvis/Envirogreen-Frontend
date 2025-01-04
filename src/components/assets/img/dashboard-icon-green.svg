@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="83.766" height="83.766" viewBox="0 0 83.766 83.766">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1bc197"/>
+      <stop offset="1" stop-color="#0e614c"/>
+    </linearGradient>
+    <filter id="dashboard-icon-green" x="0" y="0" width="83.766" height="83.766" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#dashboard-icon-green)">
+    <path id="dashboard-icon-green-2" data-name="dashboard-icon-green" d="M4.5,44.37H36.4V4.5H4.5Zm0,31.9H36.4V52.344H4.5Zm39.87,0h31.9V36.4H44.37Zm0-71.766V28.422h31.9V4.5Z" transform="translate(1.5 -0.5)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

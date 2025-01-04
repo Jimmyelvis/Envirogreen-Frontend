@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="110.678" height="133" viewBox="0 0 110.678 133">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffd999"/>
+      <stop offset="1" stop-color="#ecb14f"/>
+    </linearGradient>
+    <filter id="left_arrow" x="0" y="0" width="110.678" height="133" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-color="#fff" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#left_arrow)">
+    <g id="left_arrow-2" data-name="left arrow" transform="translate(30 100) rotate(-90)" fill="url(#linear-gradient)">
+      <path d="M36.5,0,73,50.678H0Z" stroke="none"/>
+      <path d="M 36.5 6.844264984130859 L 7.810447692871094 46.67768096923828 L 65.18955230712891 46.67768096923828 L 36.5 6.844264984130859 M 36.5 3.814697265625e-06 L 73 50.67768096923828 L 0 50.67768096923828 L 36.5 3.814697265625e-06 Z" stroke="none" fill="rgba(255,255,255,0.36)"/>
+    </g>
+  </g>
+</svg>

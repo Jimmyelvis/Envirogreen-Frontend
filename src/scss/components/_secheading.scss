@@ -1,0 +1,18 @@
+.secheading {
+  text-align: center;
+}
+
+.admin_section_heading {
+
+  .title {
+    font-size: 4.7rem;
+    color: $primary;
+  }
+ 
+  .subtitle {
+    margin: 1rem auto 0 auto;
+    color: $secondary;
+
+    @include lineClamp(2);
+  }
+}

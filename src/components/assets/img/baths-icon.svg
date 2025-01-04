@@ -1,0 +1,17 @@
+<svg id="Baths" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="54" height="54" viewBox="0 0 54 54">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_77" data-name="Rectangle 77" width="54" height="54" fill="#1bc197"/>
+    </clipPath>
+  </defs>
+  <g id="Group_60" data-name="Group 60" clip-path="url(#clip-path)">
+    <path id="Path_58" data-name="Path 58" d="M609.366,1834.457v1.133a.9.9,0,0,1-.9.9h-.236a.9.9,0,0,1-.9-.9v-1.226a6.359,6.359,0,0,0,1.08.093Z" transform="translate(-590.94 -1784.782)" fill="#1bc197"/>
+    <path id="Path_59" data-name="Path 59" d="M1326.747,1835.088v1.206a.9.9,0,0,1-.9.9h-.236a.9.9,0,0,1-.9-.9v-1.133h1.072a6.322,6.322,0,0,0,.958-.073" transform="translate(-1288.919 -1785.487)" fill="#1bc197"/>
+    <path id="Path_60" data-name="Path 60" d="M1390.132,822.813v7.847h-2.048v-6.121h-1.873v1.633h.543a.321.321,0,1,1,0,.642h-3.143a.321.321,0,1,1,0-.642h.552v-3.359a.321.321,0,0,1,.321-.321h2.342V821h-.937a.321.321,0,1,1,0-.642h2.515a.321.321,0,1,1,0,.642h-.936v1.489h2.342a.321.321,0,0,1,.321.321" transform="translate(-1345.909 -798.204)" fill="#1bc197"/>
+    <path id="Path_61" data-name="Path 61" d="M308.347,1311.488v1.79h-6.693l-.017-.058-.2.058h-.544a.9.9,0,0,1,0-1.79Z" transform="translate(-291.916 -1276.048)" fill="#1bc197"/>
+    <path id="Path_62" data-name="Path 62" d="M640.342,1527.124v2.349a.2.2,0,0,1-.2.2h-7.573a.2.2,0,0,1-.2-.2v-2.349Z" transform="translate(-615.297 -1485.852)" fill="#1bc197"/>
+    <path id="Path_63" data-name="Path 63" d="M640.342,1282.3v5.719H632.37V1282.3a.268.268,0,0,1,.268-.268h7.435a.268.268,0,0,1,.268.268" transform="translate(-615.297 -1247.386)" fill="#1bc197"/>
+    <path id="Path_64" data-name="Path 64" d="M971.107,1225.773a.9.9,0,0,1-.895.9h-14.3a.323.323,0,0,0-.135.029l-4.93,2.285v-1.762a.319.319,0,0,0,.145-.03l4.991-2.313h14.23a.9.9,0,0,1,.895.9" transform="translate(-925.16 -1191.78)" fill="#1bc197"/>
+    <path id="Path_65" data-name="Path 65" d="M402.683,1314.8l-2.058,9.033a5.717,5.717,0,0,1-5.6,4.47H375.628a5.718,5.718,0,0,1-5.6-4.47l0-.009-1.946-6.682h6.506v6.27a.321.321,0,0,0,.321.321h8.613a.321.321,0,0,0,.321-.321v-6.27h.011a.317.317,0,0,0,.134-.03l4.991-2.312Z" transform="translate(-358.152 -1279.268)" fill="#1bc197"/>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg id="email_icon" data-name="email  icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <filter id="Ellipse_4" x="0" y="0" width="36" height="36" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.104" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#35ebbd"/>
+      <stop offset="1" stop-color="#1ca180"/>
+    </linearGradient>
+    <filter id="Ellipse_5" x="2" y="2" width="32" height="32" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <circle id="Ellipse_4-2" data-name="Ellipse 4" cx="18" cy="18" r="18" fill="rgba(117,161,185,0.23)" opacity="0.85"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_4)">
+      <circle id="Ellipse_4-3" data-name="Ellipse 4" cx="18" cy="18" r="18" fill="#fff" opacity="0.85"/>
+    </g>
+  </g>
+  <circle id="Ellipse_3" data-name="Ellipse 3" cx="16" cy="16" r="16" transform="translate(2 2)" fill="#fff"/>
+  <g data-type="innerShadowGroup">
+    <circle id="Ellipse_5-2" data-name="Ellipse 5" cx="16" cy="16" r="16" transform="translate(2 2)" fill="url(#linear-gradient)"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_5)">
+      <circle id="Ellipse_5-3" data-name="Ellipse 5" cx="16" cy="16" r="16" transform="translate(2 2)" fill="#fff"/>
+    </g>
+  </g>
+  <path id="Path_142" data-name="Path 142" d="M91.26,171.529a1.427,1.427,0,0,0,.977-.369l-4.731-4.731-.328.236q-.531.391-.862.61a5.3,5.3,0,0,1-.881.447,2.685,2.685,0,0,1-1.025.228h-.019a2.684,2.684,0,0,1-1.025-.228,5.284,5.284,0,0,1-.881-.447q-.331-.219-.862-.61l-.327-.237-4.732,4.733a1.428,1.428,0,0,0,.977.369Z" transform="translate(-66.373 -147.093)" fill="#fff"/>
+  <path id="Path_143" data-name="Path 143" d="M74.366,130.226a4.935,4.935,0,0,1-.941-.811v7.2l4.17-4.17q-1.252-.874-3.229-2.218" transform="translate(-63.555 -113.869)" fill="#fff"/>
+  <path id="Path_144" data-name="Path 144" d="M195.317,130.226q-1.9,1.289-3.237,2.219l4.169,4.169v-7.2a5.138,5.138,0,0,1-.932.811" transform="translate(-170.063 -113.869)" fill="#fff"/>
+  <path id="Path_145" data-name="Path 145" d="M86.757,89.964H73.04a1.331,1.331,0,0,0-1.1.484,1.88,1.88,0,0,0-.387,1.212,2.178,2.178,0,0,0,.512,1.272,4.625,4.625,0,0,0,1.09,1.076q.317.224,1.911,1.328c.574.4,1.072.744,1.5,1.043l.941.658.139.1.257.185q.3.219.5.354t.485.3a2.833,2.833,0,0,0,.536.252,1.484,1.484,0,0,0,.466.084h.019a1.484,1.484,0,0,0,.466-.084,2.82,2.82,0,0,0,.536-.252q.284-.168.485-.3t.5-.354l.257-.185.139-.1.943-.655,3.418-2.374a4.429,4.429,0,0,0,1.137-1.146,2.465,2.465,0,0,0,.456-1.407,1.5,1.5,0,0,0-1.491-1.491" transform="translate(-61.871 -78.456)" fill="#fff"/>
+</svg>

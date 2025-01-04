@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="84.819" height="81.179" viewBox="0 0 84.819 81.179">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1bc197"/>
+      <stop offset="1" stop-color="#0e614c"/>
+    </linearGradient>
+    <filter id="Path_62435" x="0" y="0" width="84.819" height="42.946" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_7800" x="29.054" y="48.913" width="26.613" height="31.862" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-2"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Path_62436" x="7.292" y="17.092" width="70.258" height="64.087" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur-3"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="house-icon-green" transform="translate(6 4)">
+    <g transform="matrix(1, 0, 0, 1, -6, -4)" filter="url(#Path_62435)">
+      <path id="Path_62435-2" data-name="Path 62435" d="M75.848,25.234l-13.6-7.142V6.819A1.822,1.822,0,0,0,60.436,5H54.974a1.822,1.822,0,0,0-1.822,1.822v6.471l-11.9-6.275a1.833,1.833,0,0,0-1.695,0L4.974,25.222A1.822,1.822,0,0,0,4,26.845v7.281a1.822,1.822,0,0,0,2.669,1.611L40.41,17.97,74.15,35.728a1.822,1.822,0,0,0,2.669-1.611V26.845a1.822,1.822,0,0,0-.972-1.611Z" transform="translate(2 -1)" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -6, -4)" filter="url(#Rectangle_7800)">
+      <rect id="Rectangle_7800-2" data-name="Rectangle 7800" width="14.613" height="19.862" transform="translate(35.05 52.91)" fill="url(#linear-gradient)"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, -6, -4)" filter="url(#Path_62436)">
+      <path id="Path_62436-2" data-name="Path 62436" d="M8,29.721V64.655a1.822,1.822,0,0,0,1.822,1.822H26.2V44.628a1.822,1.822,0,0,1,1.822-1.822h18.2a1.822,1.822,0,0,1,1.822,1.822V66.474H64.436a1.822,1.822,0,0,0,1.822-1.822V29.718L37.129,14.39Z" transform="translate(5.29 6.7)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+</svg>

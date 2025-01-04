@@ -1,0 +1,64 @@
+.blog-card {
+  position: relative;
+  padding-top: 44%;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .blog-card_author {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    left: 4rem;
+    top: 2rem;
+    gap: 2rem;
+
+    .avatar {
+      width: 7rem;
+      height: 7rem;
+    }
+
+    .author-name {
+      color: $thirdcolor
+    }
+
+
+  }
+
+  .blog-card_info {
+    position: relative;
+    z-index: 100;
+    margin: auto;
+    height: 100%;
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .blog-title {
+      font-size: 2.5rem;
+      @include lineClamp(2);
+    }
+
+    .short-desc {
+      color: $white;
+      font-size: 2.2rem;
+      @include lineClamp(2);
+    }
+
+  }
+
+  .blog-image {
+    position: absolute;
+    height: 100% !important;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  @include gradientOverlay(transparent linear-gradient(221deg, #00000014 0%, #000000E8 100%) 0% 0% no-repeat padding-box);
+}

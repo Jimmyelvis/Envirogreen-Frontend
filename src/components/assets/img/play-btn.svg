@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="344" height="344" viewBox="0 0 344 344">
+  <defs>
+    <filter id="Polygon_8" x="108" y="77" width="178" height="202" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.341"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="play_btn" data-name="play btn" transform="translate(-1032.558 -816.558)">
+    <g id="Ellipse_174" data-name="Ellipse 174" transform="translate(1032.558 816.558)" fill="rgba(255,255,255,0.49)" stroke="rgba(255,255,255,0.56)" stroke-width="4">
+      <circle cx="172" cy="172" r="172" stroke="none"/>
+      <circle cx="172" cy="172" r="170" fill="none"/>
+    </g>
+    <circle id="Ellipse_175" data-name="Ellipse 175" cx="160" cy="160" r="160" transform="translate(1044.558 828.558)" fill="rgba(255,255,255,0.38)"/>
+    <g transform="matrix(1, 0, 0, 1, 1032.56, 816.56)" filter="url(#Polygon_8)">
+      <g id="Polygon_8-2" data-name="Polygon 8" transform="translate(268 89) rotate(90)" fill="#fff">
+        <path d="M83,0l83,142H0Z" stroke="none"/>
+        <path d="M 83 7.9266357421875 L 6.971206665039062 138 L 159.0287933349609 138 L 83 7.9266357421875 M 83 0 L 166 142 L 0 142 L 83 0 Z" stroke="none" fill="rgba(132,159,167,0.37)"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,40 @@
+.form-check-label {
+  padding-left: 2rem;
+  display: block;
+  position: relative;
+  cursor: pointer;
+  color: $primary;
+  font-weight: bold;
+  font-size: 1.6rem;
+  user-select: none;
+}
+
+  input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgb(205 219 236);
+    border-radius: 0.35rem;
+    box-shadow: inset 0px 0px 2px 2px rgb(118 152 245 / 25%);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em $primary;
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }

@@ -1,0 +1,114 @@
+.communities {
+  padding: 12rem 0;
+  grid-column: full-start / full-end;
+  background: rgba(255, 255, 255, 0.46);
+  display: grid;
+  grid-template-rows: repeat(3, max-content);
+
+  .communities_container {
+    display: grid;
+    grid-column: col-start 2 / col-end 11;
+    grid-row: 2 / 2;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(36.2rem, 1fr));
+    list-style: none;
+
+    @include respond(bp-medium) {
+      grid-template-columns: repeat(auto-fit, minmax(27.2rem, 1fr));
+    }
+
+ 
+    .communities_item {
+      position: relative;
+      // height: 48.9rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 4px 4px 5px 0px rgb(0 0 0 / 30%);
+      border-radius: 1.2rem;
+      padding-bottom: 110%;
+      overflow: hidden;
+
+      @include respond(bp-smallest) {
+       padding-bottom: 75%;
+      }
+
+      @include overlay(rgba(0, 0, 0, 0.45));
+
+      .overlay {
+        border-radius: 1.2rem;
+      }
+
+      .overlay:hover + .img-bg {
+        transition: all 0.7s;
+        transform: scale(1.5);
+      }
+
+      .img-bg {
+        border-radius: 1.2rem;
+        object-fit: cover;
+        transition: all 0.7s;
+      }
+
+      .communities_item_content {
+        display: flex;
+        z-index: 200;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+
+        @include respond(bp-small) {
+          width: 80%;
+          text-align: center;
+        }
+
+        .explore {
+          font-size: 3.3rem;
+
+          @include respond(bp-large) {
+            font-size: 3rem;
+          }
+        }
+
+        .communities_item_state {
+          color: $white;
+          margin-bottom: 2rem;
+          font-size: 3.6rem;
+
+         @include customBorderBtm($white, 0.2rem, 100%, 1rem);
+
+          @include respond(bp-large) {
+            font-size: 3.1rem;
+          }
+        }
+
+        .properties {
+          font-size: 2.4rem;
+
+          @include respond(bp-large) {
+            font-size: 2.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .btn-communities {
+    grid-row: 3 / 3;
+    justify-self: end;
+    grid-column: col-start 2 / col-end 11;
+    margin-top: 8rem;
+    width: 17.5rem;
+    height: 6rem;
+    font-size: 2.6rem;
+    font-weight: bold;
+    box-shadow: 0px 7px 12px rgb(3 3 3 / 21%);
+    border: 1px solid $white;
+  }
+}

@@ -1,0 +1,197 @@
+@mixin respond($breakpoint) {
+
+  @if $breakpoint==bp-tiny {
+    @media only screen and (max-width: 27em) {
+      @content
+    }
+
+    ; //400px
+  }
+
+  @if $breakpoint==bp-smallest {
+    @media only screen and (max-width: 31.25em) {
+      @content
+    }
+
+    ; //500px
+  }
+
+  @if $breakpoint==bp-small {
+    @media only screen and (max-width: 37.5em) {
+      @content
+    }
+
+    ; //600px
+  }
+
+  @if $breakpoint==bp-medium {
+    @media only screen and (max-width: 50em) {
+      @content
+    }
+
+    ; //800px
+  }
+
+  @if $breakpoint==bp-large {
+    @media only screen and (max-width: 62.5em) {
+      @content
+    }
+
+    ; //1000px
+  }
+
+  @if $breakpoint==bp-largest {
+    @media only screen and (max-width: 75em) {
+      @content
+    }
+
+    ; //1200px
+  }
+
+  @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 125em) { @content };    //1800
+  }
+
+
+}
+
+@mixin textOverFlowEllipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin overlay($bg: rgba(0, 0, 0, 0.4)) {
+  .overlay {
+    background-color: $bg;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    // @include respond(bp-medium) {
+    //   background-color: rgba(0, 0, 0, 0.57);
+    // }
+  }
+}
+
+@mixin gradientOverlay($bg: linear-gradient(221deg, #00000014 0%, #000000E8 100%) 0% 0% no-repeat padding-box) {
+  .overlay {
+    background: $bg;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $bg;
+  }
+}
+
+@mixin lineClamp($lines: 3) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// @mixin customBorderBtm($rgb:rgb(165 185 212 / 25%), $height, $width: 50%, $padding-top: 6px) {
+
+//   &::after {
+//     content: "";
+//     display: block;
+//     width: $width;
+//     border-bottom: $height solid $rgb;
+//     padding-top: $padding-top;
+//   }
+// }
+
+@mixin customBorderBtm(
+  $rgb: rgb(165 185 212 / 25%), 
+  $height, 
+  $width: 50%, 
+  $padding-top: 6px, 
+  $center: false
+) {
+  &::after {
+    content: "";
+    display: block;
+    width: $width;
+    border-bottom: $height solid $rgb;
+    padding-top: $padding-top;
+
+    @if $center == true {
+      margin: 0 auto;
+    }
+  }
+}
+
+
+@mixin whtTransBg($rgba: rgba(255, 255, 255, 0.46)) {
+  background: $rgba;
+}
+
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin gridTempColumn {
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(12, [col-start] minmax(2rem, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end];
+
+  @include respond(bp-large) {
+    grid-template-columns: [full-start] minmax(4.5rem, 1fr) [center-start] repeat(12, [col-start] minmax(2rem, 14rem) [col-end]) [center-end] minmax(4.5rem, 1fr) [full-end];
+  }
+
+  @include respond(bp-small) {
+    grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(12, [col-start] minmax(2rem, 14rem) [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
+  }
+
+  @include respond(bp-tiny) {
+    grid-template-columns: [full-start] minmax(1.5rem, 1fr) [center-start] repeat(12, [col-start] minmax(2rem, 14rem) [col-end]) [center-end] minmax(1.5rem, 1fr) [full-end];
+  }
+}
+
+@mixin sectionmargin {
+  margin: 7rem 0;
+
+  // @include respond(bp-large) {
+  //   margin-bottom: 2rem;
+  // }
+}
+
+
+@mixin createAvatar($units: 20rem) {
+
+  .avatar {
+    position: relative;
+    z-index: 1000;
+    width: $units;
+    height: $units;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 7px solid #fff;
+
+    img {
+      height: 100%;
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+  }
+
+}

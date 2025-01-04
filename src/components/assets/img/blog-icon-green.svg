@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="83.766" height="83.766" viewBox="0 0 83.766 83.766">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1bc197"/>
+      <stop offset="1" stop-color="#0e614c"/>
+    </linearGradient>
+    <filter id="blog-icon-green" x="0" y="0" width="83.766" height="83.766" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#blog-icon-green)">
+    <path id="blog-icon-green-2" data-name="blog-icon-green" d="M24.141,31.781a3.368,3.368,0,0,0-3.955,3.346v7.055a3.367,3.367,0,0,0,2.341,3.084,6.728,6.728,0,1,1-9.07,6.3V16.818a3.355,3.355,0,0,0-3.365-3.364H3.365A3.355,3.355,0,0,0,0,16.818V51.57A20.192,20.192,0,1,0,24.141,31.784ZM29.3,0a2.257,2.257,0,0,0-2.382,2.241V6.67a2.221,2.221,0,0,0,2.1,2.23A36,36,0,0,1,62.791,42.742a2.239,2.239,0,0,0,2.23,2.1h4.5a2.257,2.257,0,0,0,2.242-2.381A44.957,44.957,0,0,0,29.3,0Zm.042,13.452a2.263,2.263,0,0,0-2.424,2.256v4.5A2.236,2.236,0,0,0,29,22.438,22.386,22.386,0,0,1,49.313,42.786a2.254,2.254,0,0,0,2.23,2.06h4.514a2.269,2.269,0,0,0,2.257-2.423A31.535,31.535,0,0,0,29.341,13.454Z" transform="translate(6 4)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

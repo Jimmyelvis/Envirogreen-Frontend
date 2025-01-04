@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="icon-alert-info" transform="translate(6.274 5.5)">
+    <circle id="Ellipse_180" data-name="Ellipse 180" cx="21" cy="21" r="21" transform="translate(-6.274 -5.5)" fill="rgba(255,255,255,0.38)"/>
+    <g id="rounded-info-button">
+      <g id="info">
+        <path id="Path_1" data-name="Path 1" d="M15,0A15,15,0,1,0,30,15,15.044,15.044,0,0,0,15,0Zm1.5,22.5h-3v-9h3Zm0-12h-3v-3h3Z" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

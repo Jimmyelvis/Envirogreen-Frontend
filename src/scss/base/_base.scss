@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+img {
+  width: 100%;
+}
+
+
+// RESPONSIVE BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px
+
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-primary, sans-serif;
+  line-height: 1.4;
+  color: $secondary;
+  background-image: url(../../components/assets/img/new-sand.jpg);
+  // background-size: cover;
+  background-color: rgb(255 255 255 / 65%);
+  background-blend-mode: lighten;
+}
+
+// p {
+//   line-height: 1.6;
+// }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* unvisited link */
+a:link {
+  // color: inherit;
+}
+
+/* visited link */
+a:visited {
+  // color: inherit;
+}
+
+/* mouse over link */
+a:hover {
+  color: inherit;
+}
+
+/* selected link */
+a:active {
+  color: inherit;
+}
+
+.container {
+  display: grid;
+
+  @include gridTempColumn;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+.displayNone {
+  display: none;
+}
+
+#nprogress .bar {
+  background: rgb(16, 199, 147);
+  height: 0.7rem;
+  z-index: 6000;
+}
+
+
+#nprogress .spinner-icon {
+  z-index: 6000;
+  border-top-color: rgb(16, 199, 147);
+  border-left-color: rgb(16, 199, 147);
+}
+
+#tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5000;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+blockquote {
+  color: $primary;
+  border-left: $thirdcolor 3px solid;
+  padding-left: 2rem;
+  margin-left: 5rem;
+}

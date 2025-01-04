@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="36" height="36" viewBox="0 0 36 36">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#347485"/>
+      <stop offset="1" stop-color="#1f2f35"/>
+    </linearGradient>
+    <filter id="staff-icon" x="0" y="0" width="36" height="36" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-opacity="0.369"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#staff-icon)">
+    <path id="staff-icon-2" data-name="staff-icon" d="M12,13.5A6.75,6.75,0,1,0,5.25,6.75,6.752,6.752,0,0,0,12,13.5ZM18,15H15.417a8.16,8.16,0,0,1-6.834,0H6a6,6,0,0,0-6,6v.75A2.251,2.251,0,0,0,2.25,24h19.5A2.251,2.251,0,0,0,24,21.75V21A6,6,0,0,0,18,15Z" transform="translate(6 4)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

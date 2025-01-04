@@ -1,0 +1,139 @@
+.locations {
+  grid-column: 2 / 16;
+  padding: 6rem 0;
+
+  .list-locations {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: 3rem;
+
+    @include respond(bp-largest) {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 3rem;
+    }
+
+    .filters {
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      .filters-header {
+        font-size: 4.2rem;
+      }
+
+      .filter-group {
+        max-width: 43rem;
+
+        .selector {
+          position: relative;
+          height: 5rem;
+
+          .select-input {
+            color:$secondary; 
+            font-size: 2rem;
+            padding: 0px 2.9rem 0 3rem;
+          }
+        }
+
+      }
+
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        max-width: fit-content;
+        gap: 2rem;
+
+        @include respond(bp-largest) {
+          flex-direction: unset;
+        }
+      }
+
+    }
+
+    .locations-view {
+
+      .img-header {
+        position: relative;
+        height: 43.6rem;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        display: flex;
+
+        .img-header_info {
+          position: relative;
+          z-index: 200;
+          margin: auto;
+          text-align: center;
+
+          .state-name {
+            font-size: 5rem;
+            color: $white;
+          }
+
+          .img-header_count {
+            font-size: 3.3rem;
+            color: $thirdcolor;
+            font-weight: bold;
+          }
+
+        }
+
+        @include overlay(rgb(0 0 0 / 60%));
+
+        .img-header-img {
+          height: 100% !important;
+          position: absolute;
+          object-fit: cover;
+        }
+
+      }
+
+      .listings {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(31rem, 1fr));
+        column-gap: 2rem;
+        row-gap: 3rem;
+        margin-top: 6rem;
+      }
+
+    }
+
+    
+
+  }
+
+  .create-city {
+    max-width: 70rem;
+    min-width: 45%;
+
+    .back-btn {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 7rem;
+
+      .back-arrow {
+        width: 4.5rem !important;
+        height: 4.5rem !important;
+      }
+
+      p {
+        font-size: 2.3rem;
+        font-weight: bold;
+      }
+
+    }
+
+    .selector {
+      
+      .select-input {
+        padding: 0px 2.9rem 0 3rem;
+      }
+    }
+
+  }
+
+
+}

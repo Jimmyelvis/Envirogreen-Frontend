@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <filter id="Ellipse_181" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.42"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffad7f"/>
+      <stop offset="1" stop-color="#cd4b00"/>
+    </radialGradient>
+    <filter id="Icon_ionic-ios-close-circle">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#572600" flood-opacity="0.502" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="close-btn-orange" transform="translate(8 5)">
+    <g transform="matrix(1, 0, 0, 1, -8, -5)" filter="url(#Ellipse_181)">
+      <circle id="Ellipse_181-2" data-name="Ellipse 181" cx="19" cy="19" r="19" transform="translate(9 6)" fill="#fff"/>
+    </g>
+    <g data-type="innerShadowGroup">
+      <path id="Icon_ionic-ios-close-circle-2" data-name="Icon ionic-ios-close-circle" d="M23.242,3.375A19.867,19.867,0,1,0,43.11,23.242,19.864,19.864,0,0,0,23.242,3.375Zm5.034,27.06L23.242,25.4l-5.034,5.034a1.526,1.526,0,1,1-2.159-2.159l5.034-5.034L16.05,18.209a1.526,1.526,0,0,1,2.159-2.159l5.034,5.034,5.034-5.034a1.526,1.526,0,1,1,2.159,2.159L25.4,23.242l5.034,5.034a1.534,1.534,0,0,1,0,2.159A1.516,1.516,0,0,1,28.276,30.435Z" transform="translate(-3.375 -3.375)" fill="url(#radial-gradient)"/>
+      <g transform="matrix(1, 0, 0, 1, -8, -5)" filter="url(#Icon_ionic-ios-close-circle)">
+        <path id="Icon_ionic-ios-close-circle-3" data-name="Icon ionic-ios-close-circle" d="M23.242,3.375A19.867,19.867,0,1,0,43.11,23.242,19.864,19.864,0,0,0,23.242,3.375Zm5.034,27.06L23.242,25.4l-5.034,5.034a1.526,1.526,0,1,1-2.159-2.159l5.034-5.034L16.05,18.209a1.526,1.526,0,0,1,2.159-2.159l5.034,5.034,5.034-5.034a1.526,1.526,0,1,1,2.159,2.159L25.4,23.242l5.034,5.034a1.534,1.534,0,0,1,0,2.159A1.516,1.516,0,0,1,28.276,30.435Z" transform="translate(4.63 1.63)" fill="#fff"/>
+      </g>
+    </g>
+  </g>
+</svg>

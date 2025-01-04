@@ -1,0 +1,55 @@
+.staff-members {
+  grid-column: col-start 3 / col-end 10;
+  grid-template-columns: repeat(2, minmax(25rem, 1fr));
+  margin: 7rem 0;
+  gap: 4rem;
+
+  @include respond(bp-large) {
+    grid-column: col-start 1/col-end 12;
+  }
+
+  @include respond(bp-small) {
+   grid-template-columns: repeat(1, minmax(25rem, 1fr));
+  }
+
+  .profile-card {
+    background: rgb(255 255 255 / 52%);
+    display: flex;
+    flex-direction: column;
+    padding: 6rem 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    border-radius: 1.2rem;
+    transition: all 1s;
+    border: 1px solid rgb(246 200 140 / 0%);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgb(246 200 140 / 60%);
+    }
+
+    &_details {
+      text-align: center;
+
+      .profile-card_name {
+        font-size: 3.2rem;
+      }
+
+      .profile-card_role {
+        color: $secondary;
+        font-size: 2.3rem;
+      }
+    }
+
+    &_socials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      list-style: none;
+    }
+
+  }
+
+
+}

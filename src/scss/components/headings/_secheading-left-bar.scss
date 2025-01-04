@@ -1,0 +1,40 @@
+.sectionheading-left-bar {
+  grid-row: 1 / 1;
+  grid-column: col-start 3/col-end 4;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  grid-template-rows: repeat(2, max-content);
+  column-gap: 2rem;
+  row-gap: 0.5rem;
+
+  .left-bar {
+    height: 100%;
+    grid-column: 1 / 1;
+    grid-row: 1 / -1;
+    display: flex;
+    flex-direction: column;
+
+    .top-bar {
+      background: $secondary;
+      width: 100%;
+      height: 50%;
+    }
+
+    .bottom-bar {
+      background: $primary;
+      width: 100%;
+      height: 50%;
+    }
+  }
+
+  .mainheading {
+    font-size: 4rem;
+    color: $secondary;
+  }
+
+  .subheading {
+    font-size: 2.9rem;
+    color: $primary;
+  }
+}

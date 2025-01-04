@@ -1,0 +1,4 @@
+<svg id="heading-bar" xmlns="http://www.w3.org/2000/svg" width="10" height="95" viewBox="0 0 10 95">
+  <rect id="green-bar" width="10" height="50" transform="translate(0 45)" fill="#1bc197"/>
+  <rect id="black-bar" width="10" height="45" fill="#27434b"/>
+</svg>

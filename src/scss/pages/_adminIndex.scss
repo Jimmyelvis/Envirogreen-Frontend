@@ -1,0 +1,377 @@
+.admin_Index {
+  display: grid;
+  @include gridTempColumn;
+  grid-column: 1 / 15;
+  margin-top: 12rem;
+  // justify-items: center;
+  grid-auto-rows: max-content;
+  row-gap: 2rem;
+  padding-bottom: 10rem;
+
+  .card {
+    padding: 5rem;
+    width: 97%;
+
+    @include respond(bp-large) {
+      margin-bottom: 5rem;
+    }
+
+    @include respond(bp-smallest) {
+      padding: 2rem;
+    }
+  }
+
+  .index_card_heading {
+    padding-bottom: 3rem;
+    font-size: 3.3rem;
+
+    @include respond(bp-large) {
+      font-size: 4rem;
+      text-align: center;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .article_entries {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include respond(bp-large) {
+      width: 56rem;
+      margin: 0 auto;
+    }
+
+    @include respond(bp-small) {
+      width: 45rem;
+    }
+
+    @include respond(bp-smallest) {
+      width: 38rem;
+    }
+
+    @include respond(bp-tiny) {
+      width: 35rem;
+    }
+
+    .article_entry {
+      display: grid;
+      grid-template-columns: 9.7rem 2fr 1fr;
+      grid-auto-rows: 9.7rem;
+      grid-column-gap: 1.7rem;
+      align-items: center;
+
+      @include respond(bp-large) {
+        grid-template-columns: 2fr 1fr;
+        grid-auto-rows: 28rem max-content;
+        margin-bottom: 8rem;
+      }
+
+      .mainphoto {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include respond(bp-large) {
+          grid-column: 1 / -1;
+        }
+
+      }
+
+      a {
+
+        @include respond(bp-large) {
+          margin-top: 2rem;
+        }
+
+      }
+
+      .article_info {
+
+        .title {
+          font-size: 2rem;
+          @include lineClamp(1);
+
+          @include respond(bp-large) {
+            font-size: 2.8rem;
+          }
+
+        }
+
+        .subtitle {
+          font-size: 1.9rem;
+          color: $primary;
+          @include lineClamp(1);
+
+          @include respond(bp-large) {
+            font-size: 2.6rem;
+          }
+
+        }
+
+        .author {
+          font-size: 1.9rem;
+          color: $secondary;
+
+          @include respond(bp-large) {
+            font-size: 2.3rem;
+          }
+
+        }
+      }
+
+      .date {
+        background: $primary;
+        background: linear-gradient(to bottom, lighten($primary, 15%) 0%, darken($primary, 15%) 100%);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: bold;
+        height: 7.8rem;
+        width: 7.8rem;
+
+        @include respond(bp-large) {
+          border-radius: unset;
+          height: auto;
+          width: 70%;
+          flex-direction: unset;
+          justify-content: center;
+          gap: 1rem;
+          padding: 0.8rem 0.9rem;
+          font-size: 2rem;
+          align-self: flex-end;
+          justify-self: end;
+        }
+
+        .month {}
+
+        .day {}
+      }
+    }
+  }
+
+  .view_all {
+    margin-top: 5rem;
+    width: 100%;
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: bold;
+  }
+
+
+  .recent_articles {
+    grid-column: 4/8;
+
+  
+  }
+
+  .most_commented {
+    grid-column: 8 / 12;
+    justify-self: end;
+
+    @include respond(bp-large) {
+
+      .date {
+        width: 60%;
+      }
+    }
+
+  }
+
+  .card.categories {
+    width: 100%;
+    grid-column: 4 /12;
+
+    .index_card_heading {
+      text-align: center;
+
+      @include respond(bp-large) {
+        text-align: center;
+        margin-bottom: 5rem;
+        font-size: 4.3rem;
+      }
+    }
+
+    .article_entries {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+      justify-content: center;
+
+      @include respond(bp-large) {
+        grid-template-columns: repeat(2, max-content);
+        justify-content: space-between;
+        margin-top: 5rem;
+      }
+
+      @include respond(bp-small) {
+        grid-template-columns: 1fr;
+      }
+
+      .article_entry {
+
+        .article_info {
+
+          .title {
+            color: $primary;
+          }
+        }
+
+        .date {
+          width: 4.8rem;
+          height: 4.8rem;
+
+          @include respond(bp-large) {
+            align-self: unset;
+            justify-self: center;
+            border-radius: 50%;
+          }
+        }
+      }
+
+      .category {
+        cursor: pointer;
+
+        @include respond(bp-large) {
+          grid-template-columns: 1fr 1fr;
+          align-items: center;
+          gap: 2rem;
+          grid-auto-rows: 2rem;
+        }
+      }
+    }
+  }
+
+    .recent_articles,
+    .most_commented,
+    .card.categories {
+      @include respond(bp-large) {
+        grid-column: 1/15;
+        width: 80rem;
+        justify-self: center;
+      }
+
+      @include respond(bp-medium) {
+        width: 66rem;
+      }
+
+      @include respond(bp-small) {
+        width: 55rem;
+      }
+
+      @include respond(bp-smallest) {
+        width: 46rem;
+      }
+
+      @include respond(bp-tiny) {
+        width: 41rem;
+      }
+    }
+
+}
+
+.admin-Links {
+  grid-column: 3 / 13;
+  margin: 10rem auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  @include respond(bp-medium) {
+    grid-column: 2 / 14;
+  }
+
+  .entry {
+    position: relative;
+    width: calc(33% - 0.3rem);
+    margin-bottom: 1rem;
+
+    @include respond(bp-medium) {
+      width: calc(50% - 0.3rem);
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .label {
+        position: absolute;
+        z-index: 20;
+
+        .heading-3 {
+          font-size: 3.1rem;
+          color: #fff;
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+
+          @include respond(bp-smallest) {
+            font-size: 2.6rem;
+          }
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: darken($color: $primary, $amount: 15%);
+        opacity: 0.75;
+      }
+    }
+
+  }
+
+}
+
+.cat-tags-contain {
+  grid-column: col-start 4 / col-end 8;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-around;
+  min-height: 60rem;
+  position: relative;
+
+  @include respond(bp-medium) {
+    grid-template-columns: 1fr;
+    margin-bottom: 15rem;
+    margin-top: 0rem;
+  }
+
+  .msg {
+    position: absolute;
+    text-align: center;
+    width: 60%;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+    margin-top: 7rem;
+
+    label {
+      color: $thirdcolor;
+      font-weight: bold;
+    }
+
+
+    .form-control {
+      padding: 0.775rem 0.75rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .entries {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.4rem;
+  }
+}

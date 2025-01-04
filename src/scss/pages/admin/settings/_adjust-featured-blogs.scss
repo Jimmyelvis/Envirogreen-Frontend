@@ -1,0 +1,118 @@
+.adjust-featured-blogs-pg {
+  grid-column: 3 / 15;
+  padding: 8rem 0;
+  margin-bottom: 8rem;
+
+  .sectionheading .headings .mainheading {
+    font-size: 4.9rem;
+  }
+
+  @include respond(bp-small) {
+    grid-column: 2/16;
+  }
+
+  .adjust-indexes {
+    margin-top: 7.5rem;
+
+    .adjust-indexes-heading {
+
+      .mainheading {
+        font-size: 3rem;
+      }
+
+    }
+
+    .field-group {
+      margin-bottom: 1.5rem;
+      max-width: 13rem;
+    }
+
+  }
+
+  .featured-blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(46rem, 1fr));
+    grid-auto-rows: 50rem;
+    column-gap: 3rem;
+    row-gap: 9rem;
+    background: rgb(255 255 255 / 0%);
+
+    // 1500px
+    @media screen and (max-width: 93.75rem) {
+      grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+      
+    }
+
+    @include respond(bp-large) {
+      grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+      grid-auto-rows: 60rem;
+    }
+
+    @include respond(bp-tiny) {
+      grid-auto-rows: 52rem;
+    }
+
+    .featured-blog {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      position: relative;
+
+      &>.heading-3 {
+        font-size: 3rem;
+        text-align: center;
+        color: $secondary;
+      }
+
+      .index-num {
+        color: $primary;
+      }
+
+      .blog-card {
+        padding-top: 39%;
+        height: 100%;
+
+        @include respond(bp-large) {
+          padding-top: 23rem;
+          height: 100%;
+        }
+
+        .blog-card_info {
+
+          .blog-title {
+            @include lineClamp(2);
+          }
+          
+        }
+
+      }
+
+      &:hover .hovered-overlay {
+        opacity: 1;
+        visibility: visible;
+        z-index: 500;
+      }
+
+      .hovered-overlay {
+        position: absolute;
+        background: rgb(0 0 0 / 73%);
+        height: 88%;
+        width: 100%;
+        top: 12.9%;
+        border-radius: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: all 0.3s;
+        visibility: hidden;
+      }
+
+    }
+
+
+  }
+
+
+
+}

@@ -1,0 +1,104 @@
+.news-letter {
+  background-image: url(../../../components/assets/img/suscribe-bg.jpg);
+  grid-column: full-start / full-end;
+  height: 32.8rem;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-size: cover;
+
+  .heading-3 {
+    font-size: 3.8rem;
+    color: #fff;
+    margin-bottom: 4rem;
+    text-align: center;
+
+    @include respond(bp-smallest) {
+     font-size: 3.3rem;
+    }
+  }
+
+  .subscribe-form {
+    background: rgb(255 255 255 / 70%);
+    display: flex;
+    max-width: 90rem;
+    min-width: 80rem;
+    height: 7.5rem;
+    border-radius: 12rem;
+    border: 2px solid rgba(255, 255, 255, 0.47);
+    padding: 3rem;
+    gap: 6rem;
+    padding-left: 4rem;
+    padding-right: 0.3rem;
+    margin: 0 auto;
+    align-items: center;
+
+    @include respond(bp-medium) {
+      max-width: 90%;
+      min-width: unset;
+      gap: 2rem;
+    }
+
+    .envelope {
+      width: 4.3rem !important;
+      height: 3.6rem !important;
+
+      @include respond(bp-smallest) {
+       display: none;
+      }
+    }
+
+    input {
+      background: transparent;
+      border: none;
+      flex: 2;
+      font-size: 2rem;
+      color: lighten($secondary, 15%);
+
+      @include respond(bp-smallest) {
+       flex: unset;
+      }
+
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        color: lighten($secondary, 15%);
+        font-weight: bold;
+      }
+    }
+
+    .btn-subscribe {
+      border-radius: 5rem;
+      height: auto;
+      width: auto;
+      font-size: 2.3rem;
+      border: 4px solid rgb(255 255 255 / 82%);
+      padding: 3rem;
+
+      // @include respond(bp-medium) {
+      //   height: 5.9rem;
+      //   width: 33%;
+      //   font-size: 2rem;
+      // }
+
+      // @include respond(bp-smallest) {
+      //  width: unset;
+      // }
+
+      .send-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 3rem !important;
+        height: 3rem !important;
+      }
+
+    }
+
+  }
+}

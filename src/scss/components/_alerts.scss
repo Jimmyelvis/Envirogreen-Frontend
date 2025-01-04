@@ -1,0 +1,118 @@
+// .alert_box_style {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   color: $white;
+//   font-family: $font-primary;
+//   height: 6rem;
+//   text-align: center;
+//   position: absolute;
+//   top: -11rem;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   min-width: 40%;
+//   max-width: 80%;
+//   font-weight: bold;
+// }
+
+#alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  top: 7rem;
+  position: absolute;
+  right: 5rem;
+  min-width: 60rem;
+  height: auto;
+  z-index: 9999;
+
+  .alert {
+    padding: 1rem 2rem;
+    color: $white;
+    border-radius: 0.8rem;
+    border: 2px solid $white;
+    box-shadow: 5px 6px 5px 0px rgba(0, 0, 0, 0.14);
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    .alert-icon {
+      width: 4.4rem !important;
+      height: 4.4rem !important;
+    }
+
+
+  }
+
+  .alert-danger {
+    // background: linear-gradient(to bottom, rgba(255, 77, 33, 1) 0%, rgb(161 22 22) 100%);
+
+    border: 6px solid #f28282;
+    background: transparent linear-gradient(148deg, #C11B1B 0%, #892525 100%) 0% 0% no-repeat padding-box;
+  }
+
+  .alert-success {
+    // background: linear-gradient(to bottom, lighten($primary, 5%) 0%, darken($primary, 10%) 100%);
+
+    border: 6px solid #72d9bf;
+    background: transparent linear-gradient(148deg, lighten($primary, 5%) 0%, darken($primary, 10%) 100%) 0% 0% no-repeat padding-box;
+  }
+
+  .alert-warning {
+    // background: linear-gradient(to bottom, lighten($warning, 5%) 0%, darken($warning, 10%) 100%);
+
+    border: 6px solid #ffdda6;
+    background: transparent linear-gradient(148deg, lighten($warning, 5%) 0%, darken($warning, 10%) 100%) 0% 0% no-repeat padding-box;
+  }
+
+  .alert-info {
+    // background: linear-gradient(to bottom, lighten($info, 5%) 0%, darken($info, 10%) 100%);
+
+    border: 6px solid #a5d2fe;
+    background: transparent linear-gradient(148deg, lighten($info, 5%) 0%, darken($info, 10%) 100%) 0% 0% no-repeat padding-box;
+  }
+
+}
+
+
+/* bete version*/
+
+// .alerts-container {
+//   position: fixed;
+//   min-width: 60rem;
+//   display: block;
+//   height: auto;
+//   z-index: 9999;
+//   top: -5rem;
+//   right: -50%;
+//   transition: right 0.7s ease-in-out;
+// }
+
+// .alerts-container.active {
+//   right: 0; /* Slide in to visible */
+// }
+
+// .alert {
+//   // Your existing styles for alert messages
+//   position: absolute;
+//   width: 60rem;
+//   padding: 2rem 2rem;
+//   color: #fff;
+//   border-radius: 1.2rem;
+//   border: 2px solid #fff;
+//   box-shadow: 5px 6px 5px 0px rgb(0 0 0 / 14%);
+//   font-weight: bold;
+//   font-size: 2rem;
+// }
+
+// .alert-success {
+//   background-color: green; /* Example success color */
+// }
+
+//   .alert-danger {
+//     background: linear-gradient(to bottom, rgba(255, 77, 33, 1) 0%, rgb(161 22 22) 100%);
+//   }
+
+// Add more alert types as needed

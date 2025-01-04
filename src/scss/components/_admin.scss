@@ -1,0 +1,310 @@
+$sidebar_width: 21rem;
+
+
+.admin_container {
+  display: flex;
+  position: relative;
+
+  .admin-bg {
+    background-color: rgb(246 252 254);
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    @include gridTempColumn;
+    grid-auto-rows: max-content;
+
+    /*
+      Needed for transitioning the admin panel
+      left when the sidebar is active
+    */
+    margin-left: 0;
+    transition: all 300ms linear;
+    padding-bottom: 10rem;
+
+    .admin_section_heading {
+      grid-column: 2/ 14;
+      margin-top: 15.3rem;
+      text-align: center;
+      margin-bottom: 8rem;
+
+      .subtitle {
+        width: 35%;
+
+        @include respond(bp-medium) {
+          width: 55%;
+        }
+      }
+    }
+  }
+
+
+
+  .admin_sidebar {
+    position: fixed;
+    width: $sidebar_width;
+    transition: all 300ms linear;
+    background: linear-gradient(to bottom, rgb(250, 253, 255) 0%, rgb(248, 250, 255) 33%, rgba(255, 255, 255, 0.97) 100%);
+    box-shadow: 0px 2px 5px 0px rgb(201 222 229 / 79%);
+    z-index: 5000;
+    overflow: visible;
+    padding-bottom: 2.5rem;
+    height: 100vh;
+    background: #fff;
+
+    @include respond(bp-smallest) {
+     overflow-y: auto;
+    }
+
+    .close-modal-btn {
+      top: 0.8rem;
+      right: 1.4rem;
+      font-size: 2.4rem;
+    }
+
+    ul {
+
+      .link {
+        width: 100%;
+        height: 10.3rem;
+       
+        &:hover {
+          background: linear-gradient(to right, rgb(205, 219, 244) 0%, rgb(242, 246, 252) 100%);
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: space-evenly;
+          height: 100%;
+
+          img {
+            width: 2.3rem;
+          }
+
+          h4 {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $primary;
+            text-align: center;
+            width: 50%;
+          }
+        }
+
+        .logo {
+          width: 16.3rem;
+          margin: 0 auto;
+          display: block;
+        }
+
+        .elipsiss {
+          width: 2.3rem;
+          margin: auto;
+          cursor: pointer;
+
+          svg {
+            fill: $primary;
+          }
+        }
+
+      }
+
+      .active_link {
+        background: linear-gradient(to right, hsl(218deg 63% 88%) 0%, rgba(242, 246, 252, 1) 100%);
+      }
+
+      .logo_contain {
+        height: auto;
+      }
+
+      .menu_change {
+        display: flex;
+      }
+    }
+
+  }
+
+  .settings_btn_container {
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+
+    .settings_btn {
+      padding: 0.75rem;
+      color: #ffffff;
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      box-shadow: 1px 1px 14px 5px rgb(141 154 159 / 0%);
+      transition: all 300ms linear;
+
+      &:hover {
+        box-shadow: 1px 1px 14px 5px rgb(141 154 159 / 68%);
+      }
+
+    }
+  }
+
+
+
+  .admin_navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    height: 7.3rem;
+    z-index: 3000;
+    background: linear-gradient(to bottom, rgb(250 253 255) 0%, rgb(248 250 255) 33%, rgba(255, 255, 255, 0.97) 100%);
+    box-shadow: 0px 2px 5px 0px rgba(201, 222, 229, 0.79);
+    background: #fff;
+
+    .admin_nav_items {
+      display: flex;
+      position: relative;
+      padding: 0.5rem;
+      justify-content: space-between;
+      margin-right: 5.5rem;
+      margin-left: 1.5rem;
+      height: 100%;
+
+      .right_side {
+        display: flex;
+        gap: 1.3rem;
+
+        .notification_icon {
+          font-size: 2rem;
+        }
+
+        .user_profile {
+          display: flex;
+          padding: 0.25rem;
+          align-items: center;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          gap: 1.5rem;
+          justify-content: center;
+
+          @include createAvatar(4rem)
+        }
+
+        .user_profile_dropdown,
+        .notification_panel {
+          top: 7rem;
+        }
+
+        .user_profile_dropdown {
+          position: absolute;
+          padding: 2rem;
+          width: 33rem;
+          right: 0rem;
+
+          .close-modal-btn {
+            top: 1.4rem;
+            right: 2rem;
+            font-size: 2.6rem;
+          }
+
+          .drop_dowm_items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .user_info {
+            display: flex;
+            padding-bottom: 1.5rem;
+            margin-top: 1.5rem;
+            align-items: center;
+            gap: 1.25rem;
+
+            @include createAvatar(7rem);
+
+            .name {
+              font-size: 1.4rem;
+              color: $primary;
+              font-weight: bold;
+            }
+
+            .role,
+            .email {
+              font-size: 1.3rem;
+              font-weight: bold;
+            }
+
+            .role {
+              color: $primary;
+            }
+
+          }
+
+          .user_profile_items {
+            display: grid;
+            cursor: pointer;
+            margin: 2rem 0;
+            grid-template-columns: 20% 70%;
+            grid-gap: 10%;
+            align-items: center;
+
+            a {
+              justify-self: center;
+              width: 100%;
+              display: flex;
+              justify-content: center;
+
+              img {
+                width: 70%;
+              }
+            }
+
+            .title {
+              font-weight: bold;
+              color: $primary;
+            }
+          }
+        }
+
+        .notification_panel {
+          position: absolute;
+          right: 1.25rem;
+          padding: 2rem;
+          width: 35rem;
+
+          .notification_items {
+            margin-top: 3rem;
+
+            .notification_item {
+              display: flex;
+              padding: 0.75rem;
+              line-height: 2rem;
+              align-items: center;
+              gap: 1.25rem;
+              margin: 2rem 0;
+
+              @include createAvatar(5rem)
+            }
+          }
+        }
+      }
+    }
+
+    .icon_container {
+      position: relative;
+      padding: 0.75rem;
+      line-height: 1.75rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+      border: none;
+      background: transparent;
+    }
+
+  }
+
+  .move_left {
+    margin-left: $sidebar_width;
+    transition: all 300ms linear;
+  }
+
+  .move_right {
+    margin-right: 28rem !important;
+    // transition: all 300ms linear;
+  }
+}

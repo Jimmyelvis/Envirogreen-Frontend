@@ -1,0 +1,228 @@
+.staff-detail {
+  grid-column: full-start / full-end;
+  margin: 10rem 0;
+  margin-top: $nav-btn-margin + 4rem;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: minmax(65rem, max-content) 1fr max-content;
+  -moz-column-gap: 8rem;
+  column-gap: 8rem;
+  // row-gap: 8rem;
+
+  @include respond(bp-large) {
+    grid-template-rows: 60rem max-content 1fr max-content;
+    row-gap: 8rem;
+    margin: 16rem 0;
+  }
+
+  @include respond(bp-smallest) {
+    grid-template-rows: 48rem max-content 1fr max-content;
+  }
+
+  .staff-detail_left {
+    grid-column: col-start 2 / col-end 6;
+    position: relative;
+    // height: 67.7rem;
+    grid-row: 1/1;
+
+    @include respond(bp-large) {
+      grid-column: col-start 1/col-end 12;
+      height: 100%;
+    }
+
+    .staff-detail_photo {
+      position: absolute;
+      object-fit: cover;
+      // height: 100% !important;
+      border-radius: 1.2rem;
+
+      @include respond(bp-large) {
+        height: 100% !important;
+        object-position: center;
+      }
+    }
+
+  }
+
+  .staff-detail_right {
+    grid-column: col-start 7 / col-end 11;
+    grid-row: 1 / 1;
+
+    @include respond(bp-large) {
+      grid-row: 2/2;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column: col-start 1/col-end 12;
+      grid-template-rows: repeat(3, max-content);
+    }
+
+    .user-name_role {
+
+      @include respond(bp-large) {
+        grid-row: 1/1;
+      }
+
+      @include respond(bp-small) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        margin-bottom: 2rem;
+
+      }
+    }
+
+    .staff-detail_username {
+      font-size: 4rem;
+      color: $secondary;
+      margin-bottom: 1rem;
+
+      @include respond(bp-large) {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .staff-detail_role {
+      font-size: 2.9rem;
+    }
+
+    .staff-detail_bio {
+      margin: 3rem 0;
+
+      @include respond(bp-large) {
+        margin: 0;
+        grid-row: 1/2;
+        grid-column: 2 / -1;
+      }
+
+      @include respond(bp-small) {
+        grid-column: 1/-1;
+        grid-row: 2/2;
+
+      }
+    }
+
+    .staff-detail_socials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+      column-gap: 3rem;
+      row-gap: 2rem;
+      list-style: none;
+
+      @include respond(bp-large) {
+        grid-column: 1 / -1;
+        grid-row: 4 / -1;
+        grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+        margin-top: 5rem;
+      }
+
+      @include respond(bp-medium) {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      }
+
+      a {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        align-items: center;
+        gap: 3rem;
+        font-weight: bold;
+        font-family: $font-primary-bold;
+        letter-spacing: 1px;
+        word-wrap: break-word;
+
+        img {
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
+    }
+  }
+
+  .staff-detail_listings {
+    grid-column: full-start/full-end;
+    grid-row: 2/-1;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, max-content);
+    background: rgba(255, 255, 255, 0.46);
+    padding: 6rem 0;
+
+    @include respond(bp-large) {
+      grid-row: 3/3;
+    }
+
+    .sectionheading-left-bar {
+      grid-column: 1/-1;
+      justify-self: center;
+    }
+
+    .user_listings {
+      grid-row: 2/2;
+      grid-column: 4/10;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(25rem, 1fr));
+      -moz-column-gap: 2rem;
+      column-gap: 2rem;
+      row-gap: 6rem;
+      justify-content: center;
+
+      @include respond(bp-large) {
+        grid-column: 2/12;
+      }
+
+      @include respond(bp-small) {
+        grid-template-columns: repeat(1, minmax(25rem, 1fr));
+      }
+    }
+
+    .pagination {
+      grid-row: 3/-1;
+      grid-column: 1/13;
+      gap: 2rem;
+    }
+    
+  }
+
+  .staff-detail_contact {
+    grid-column: full-start/full-end;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding: 5rem 0;
+
+    @include respond(bp-large) {
+      grid-row: 4/4;
+    }
+
+    .heading-3 {
+      font-size: 2.6rem;
+      grid-column: 1 / -1;
+      justify-self: center;
+      margin-bottom: 6rem;
+    }
+
+    form {
+      grid-column: 4 / 10;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+
+      @include respond(bp-large) {
+        grid-column: 2/12;
+      }
+
+      @include respond(bp-small) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .text-area {
+        grid-column: 1 / -1;
+      }
+
+      .btn-contact {
+        justify-self: end;
+        grid-column: 1/-1;
+        padding: 1rem 2rem;
+        font-size: 2.3rem;
+      }
+    }
+
+  }
+}

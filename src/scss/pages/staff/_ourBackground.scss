@@ -1,0 +1,196 @@
+.our-bg {
+  grid-column: full-start / full-end;
+  margin-top: 10rem;
+  display: grid;
+  grid-template-columns: subgrid;
+
+  .who-we-are {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: col-start 3/col-end 10;
+    grid-template-rows: 45.7rem;
+    background: rgba(255, 255, 255, 0.41);
+    border-radius: 1.2rem;
+    overflow: hidden;
+
+    @include respond(bp-large) {
+      grid-column: col-start 2/col-end 11;
+    }
+
+    @include respond(bp-medium) {
+      grid-column: col-start 1/col-end 12;
+    }
+
+    @include respond(bp-small) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, 1fr);
+    }
+
+    &_left {
+      padding: 15%;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      @include respond(bp-small) {
+        order: 1;
+        padding: 13%;
+      }
+    }
+
+    &_right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      @include respond(bp-small) {
+        order: 0;
+      }
+
+      .play-btn {
+        position: absolute;
+        z-index: 1000;
+        width: 60% !important;
+        height: 60% !important;
+      }
+
+      @include overlay(rgb(0 0 0 / 13%));
+
+      .our-bg-img {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+      }
+    }
+
+
+  }
+
+  .our-founders {
+    grid-column: col-start 3/col-end 10;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(2, max-content);
+    margin: 8rem 0;
+    background: rgba(255, 255, 255, 0.41);
+    border-radius: 1.2rem;
+    padding: 8rem 0;
+
+    @include respond(bp-large) {
+      grid-column: col-start 2/col-end 11;
+    }
+
+    @include respond(bp-medium) {
+      grid-column: col-start 1/col-end 12;
+    }
+
+    .sectionheading-left-bar {
+      grid-column: 1 / -1;
+      justify-self: center;
+
+      .mainheading {
+
+        @include respond(bp-large) {
+          font-size: 3.5rem;
+        }
+      }
+
+      .subheading {
+
+        @include respond(bp-large) {
+          font-size: 3.5rem;
+        }
+      }
+    }
+
+    .founders {
+      grid-column: 2 / 8;
+      display: flex;
+      gap: 5rem;
+      justify-content: center;
+
+      @include respond(bp-large) {
+       grid-column: 1 / 9;
+      }
+
+      @include respond(bp-small) {
+        display: flex;
+        flex-direction: column;
+        grid-column: 2/8;
+      }
+
+      .founder {
+        overflow: hidden;
+
+        @include respond(bp-large) {
+          flex-basis: 35%;
+        }
+
+        @include respond(bp-small) {
+          flex-basis: unset;
+        }
+
+        .founder-img {
+          // height: 40rem !important;
+          border-radius: 1.2rem;
+          object-fit: cover;
+          margin-bottom: 3rem;
+        }
+
+        .heading-3 {
+          text-align: center;
+          font-size: 3rem;
+        }
+
+        p {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+
+      }
+
+    }
+  }
+
+  .selling-point {
+    grid-column: full-start / full-end;
+    background: url(../../../components/assets/img/playroom.jpg) no-repeat center center/cover;
+    height: 44.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-attachment: fixed;
+    padding: 0 3rem;
+
+    &_info {
+      position: relative;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+
+      .heading-3 {
+        font-size: 4.6rem;
+        color: $white;
+        text-align: center;
+
+        @include respond(bp-small) {
+          font-size: 3.6rem;
+        }
+      }
+
+      .btn-primary-grad{
+        padding: 1.1rem 2.7rem;
+        font-size: 2.4rem;
+      }
+    }
+
+    @include overlay();
+  }
+
+}

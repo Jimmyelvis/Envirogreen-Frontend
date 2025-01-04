@@ -1,0 +1,19 @@
+<svg id="notification-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40.975" height="40.975" viewBox="0 0 40.975 40.975">
+  <defs>
+    <filter id="Ellipse_228" x="0" y="0" width="40.975" height="40.975" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.29" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g data-type="innerShadowGroup">
+    <path id="Ellipse_228-2" data-name="Ellipse 228" d="M20.487,0A20.487,20.487,0,1,1,0,20.487,20.487,20.487,0,0,1,20.487,0Z" fill="#f5ebd9"/>
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Ellipse_228)">
+      <path id="Ellipse_228-3" data-name="Ellipse 228" d="M20.487,0A20.487,20.487,0,1,1,0,20.487,20.487,20.487,0,0,1,20.487,0Z" fill="#fff"/>
+    </g>
+  </g>
+  <path id="Icon_awesome-bell" data-name="Icon awesome-bell" d="M9.86,22.536a2.817,2.817,0,0,0,2.816-2.817H7.044A2.817,2.817,0,0,0,9.86,22.536Zm9.481-6.59c-.85-.914-2.442-2.288-2.442-6.791a6.951,6.951,0,0,0-5.631-6.83V1.409a1.408,1.408,0,1,0-2.815,0v.917a6.951,6.951,0,0,0-5.631,6.83c0,4.5-1.591,5.878-2.442,6.791A1.375,1.375,0,0,0,0,16.9a1.41,1.41,0,0,0,1.413,1.409H18.306A1.409,1.409,0,0,0,19.719,16.9a1.374,1.374,0,0,0-.379-.956Z" transform="translate(10.628 9.219)" fill="#1bc197" stroke="#e8ca99" stroke-width="1"/>
+</svg>

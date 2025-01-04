@@ -1,0 +1,35 @@
+.settings-pg {
+  grid-column: 3 / 15;
+  padding: 8rem 0;
+
+  .sectionheading .headings .mainheading {
+    font-size: 4.9rem;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 2rem;
+    margin-top: 6rem;
+    flex-wrap: wrap;
+
+    .photo-btn {
+      width: 40.3rem;
+
+      @include respond(bp-large) {
+        width: 100%;
+        padding-bottom: 22%;
+        padding-top: 22%;
+      }
+
+      a {
+        margin: auto;
+      }
+
+      .bnt-heading {
+        font-size: 4rem;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,142 @@
+
+/*
+=============== 
+Modal
+===============
+*/
+
+#root_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  // width: 100%;
+  // height: 100%;
+  z-index: 5000;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  transition: all 0.6s 0.9s linear;
+  transition: all 0.3s linear;
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: scale(1.59);
+  animation: hide 1s linear 0s;
+  -webkit-animation-fill-mode: forwards;
+
+}
+
+
+
+/* OPEN/CLOSE MODAL */
+.show-modal {
+  visibility: visible;
+  z-index: 4000;
+  opacity: 0;
+  animation: show 1s linear 0s;
+  transform: scale(1);
+  background-color: rgba(0, 0, 0, 0.799);
+  -webkit-animation-fill-mode: forwards;
+
+  @include gridTempColumn;
+  align-items: center;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.hide-modal {
+ visibility: visible;
+ z-index: 4000;
+ opacity: 1;
+ animation: hide 1s linear 0s;
+ transform: scale(1);
+ background-color: rgba(0, 0, 0, 0.799);
+ -webkit-animation-fill-mode: forwards;
+}
+
+.modal-container {
+  text-align: center;
+  display: grid;
+  position: relative;
+  visibility: hidden;
+  z-index: -2;
+  opacity: 0;
+  transition: all 0.3s linear;
+  grid-column: 1 / 15;
+  height: 100%;
+}
+
+.show-modal-container{
+  visibility: visible;
+  z-index: 3000;
+  opacity: 1;
+  transition: all 0.7s 0.9s linear;
+}
+
+
+.close-modal-btn {
+  position: absolute;
+  top: 4.1rem;
+  right: 3.1rem;
+  font-size: 4rem;
+  background: transparent;
+  border-color: transparent;
+  color: #f6c88c;
+  cursor: pointer;
+  transition: all 300ms linear;
+  z-index: 5000;
+  width: 5rem !important;
+  height: 5rem !important;
+
+
+  &:hover {
+    transition: all 300ms linear;
+    color: rgba($color: $thirdcolor, $alpha: 0.8);
+  }
+
+  &:active{
+    background: transparent;
+    border-color: transparent;
+  }
+}
+
+
+
+.overflowFix {
+  overflow-y: hidden;
+  position: fixed;
+  width: 99.1%;
+}
+

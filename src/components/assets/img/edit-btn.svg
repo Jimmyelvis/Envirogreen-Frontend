@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#26d8ab"/>
+      <stop offset="1" stop-color="#148568"/>
+    </linearGradient>
+    <filter id="Icon_awesome-user-edit" x="9.776" y="13.88" width="46.253" height="40.004" filterUnits="userSpaceOnUse">
+      <feOffset dy="2" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feFlood flood-opacity="0.251"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="edit-btn" transform="translate(-1018.13 -1432.63)">
+    <g id="Ellipse_23" data-name="Ellipse 23" transform="translate(1018.13 1432.63)" fill="#fffcf8" stroke="rgba(212,222,239,0.35)" stroke-width="1">
+      <circle cx="32" cy="32" r="32" stroke="none"/>
+      <circle cx="32" cy="32" r="31.5" fill="none"/>
+    </g>
+    <g id="Ellipse_24" data-name="Ellipse 24" transform="translate(1024.13 1438.63)" stroke="#f5ebd9" stroke-width="1" fill="url(#linear-gradient)">
+      <circle cx="26" cy="26" r="26" stroke="none"/>
+      <circle cx="26" cy="26" r="25.5" fill="none"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1018.13, 1432.63)" filter="url(#Icon_awesome-user-edit)">
+      <path id="Icon_awesome-user-edit-2" data-name="Icon awesome-user-edit" d="M10.939,12.5A6.251,6.251,0,1,0,4.688,6.251,6.25,6.25,0,0,0,10.939,12.5Zm4.376,1.563H14.5a8.5,8.5,0,0,1-7.12,0H6.563A6.565,6.565,0,0,0,0,20.628v2.032A2.345,2.345,0,0,0,2.344,25H15.769a2.345,2.345,0,0,1-.127-1.04l.332-2.974.059-.542.386-.386,3.775-3.775a6.5,6.5,0,0,0-4.879-2.222Zm2.212,7.1-.332,2.979a.777.777,0,0,0,.859.859l2.974-.332,6.734-6.734-3.5-3.5L17.527,21.16Zm13.386-8.028-1.851-1.851a1.17,1.17,0,0,0-1.651,0l-1.846,1.846-.2.2,3.506,3.5,2.041-2.041A1.176,1.176,0,0,0,30.912,13.132Z" transform="translate(17.28 19.38)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,81 @@
+.loginbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: 1 / -1;
+
+  .contentbox {
+    height: 80.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 124.7rem;
+    background-repeat: no-repeat;
+
+    @include respond(bp-medium) {
+      // width: 90%;
+      background-image: none;
+    }
+
+    .logo {
+      width: 38rem;
+      margin-bottom: 4rem;
+    }
+
+    .signinForm, .signupForm {
+
+      .alert.alert-info {
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 4rem;
+        font-weight: bold;
+      }
+
+      .alert.alert-danger {
+        color: $thirdcolor;
+        margin-bottom: 2rem;
+        font-weight: bold;
+      }
+
+      form {
+         display: grid;
+         margin-bottom: 4rem;
+
+        .inputField {
+     
+          .inputCtrl {
+            border: 2px solid rgba(56, 99, 165, 0.39);
+            background-color: rgba(1, 34, 72, 0.57);
+            color: #fff;
+
+
+            &::-webkit-input-placeholder {
+              color: $placeholder-blue;
+            }
+
+            &:focus {
+              border: 2px solid rgba(106, 102, 217, 0.57);
+            }
+          }
+
+        }
+
+
+         .btn-primary-grad {
+           margin-top: 1rem;
+           width: 12rem;
+           justify-self: end;
+         }
+      }
+
+       .warning {
+         font-size: 1.7rem;
+         width: 100%;
+         cursor: pointer;
+         color: $thirdcolor;
+       }
+    }
+  }
+}

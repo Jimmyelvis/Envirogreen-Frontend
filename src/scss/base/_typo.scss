@@ -1,0 +1,99 @@
+@import url("https://use.typekit.net/usb8qya.css");
+
+
+
+@font-face {
+  font-family: 'MadeTommy-Medium';
+  src: url('../../components/assets/fonts/MADE\ TOMMY\ Medium_PERSONAL\ USE.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MadeTommy-Bold';
+  src: url('../../components/assets/fonts/MADE\ TOMMY\ Bold_PERSONAL\ USE.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+$font-primary: open-sans, sans-serif;
+$font-links: open-sans, sans-serif;
+$font-primary-bold: open-sans, sans-serif;
+$font-bold: 'fira-sans-condensed', sans-serif;
+$font-bold-alt: 'fira-sans', sans-serif;
+
+// %heading {
+//   font-family: 'MadeTommy-Medium', sans-serif;
+//   line-height: 1.2;
+//   font-style: normal;
+//   color: $primary;
+//   font-weight: 300;
+//   letter-spacing: 0.1rem;
+// }
+
+%heading {
+  font-family: 'fira-sans-condensed', sans-serif;
+  line-height: 1.2;
+  font-style: normal;
+  color: $primary;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 4.5rem;
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 4rem;
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 2.6rem;
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.9rem;
+}
+
+.heading-5 {
+  @extend %heading;
+  font-size: 1.6rem;
+}
+
+%admin_heading {
+  font-family: fira-sans-condensed, sans-serif;
+  font-weight: 300;
+  line-height: 1.2;
+  font-style: normal;
+  color: $primary
+}
+
+.admin_heading-1 {
+  @extend %admin_heading;
+  font-size: 4.5rem;
+}
+
+.admin_heading-2 {
+  @extend %admin_heading;
+  font-size: 4rem;
+}
+
+.admin_heading-3 {
+  @extend %admin_heading;
+  font-size: 2.6rem;
+}
+
+.admin_heading-4 {
+  @extend %admin_heading;
+  font-size: 1.9rem;
+}
+
+.admin_heading-5 {
+  @extend %admin_heading;
+  font-size: 1.6rem;
+}

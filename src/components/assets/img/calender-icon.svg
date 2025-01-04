@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53" height="54" viewBox="0 0 53 54">
+  <defs>
+    <filter id="Ellipse_4" x="0" y="0" width="53" height="54" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.104" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#35ebbd"/>
+      <stop offset="1" stop-color="#1ca180"/>
+    </linearGradient>
+    <filter id="Ellipse_5" x="4" y="4" width="45" height="45" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="calender-icon" transform="translate(0 0.485)">
+    <g data-type="innerShadowGroup">
+      <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="26.5" cy="27" rx="26.5" ry="27" transform="translate(0 -0.485)" fill="rgba(117,161,185,0.23)" opacity="0.85"/>
+      <g transform="matrix(1, 0, 0, 1, 0, -0.49)" filter="url(#Ellipse_4)">
+        <ellipse id="Ellipse_4-3" data-name="Ellipse 4" cx="26.5" cy="27" rx="26.5" ry="27" fill="#fff" opacity="0.85"/>
+      </g>
+    </g>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="23.5" cy="23.5" r="23.5" transform="translate(3 2.515)" fill="#fff"/>
+    <g data-type="innerShadowGroup">
+      <circle id="Ellipse_5-2" data-name="Ellipse 5" cx="22.5" cy="22.5" r="22.5" transform="translate(4 3.515)" fill="url(#linear-gradient)"/>
+      <g transform="matrix(1, 0, 0, 1, 0, -0.49)" filter="url(#Ellipse_5)">
+        <circle id="Ellipse_5-3" data-name="Ellipse 5" cx="22.5" cy="22.5" r="22.5" transform="translate(4 4)" fill="#fff"/>
+      </g>
+    </g>
+    <path id="Icon_awesome-calendar-alt" data-name="Icon awesome-calendar-alt" d="M0,22.657A2.344,2.344,0,0,0,2.344,25H19.532a2.344,2.344,0,0,0,2.344-2.344V9.375H0Zm15.626-9.571a.588.588,0,0,1,.586-.586h1.953a.588.588,0,0,1,.586.586V15.04a.588.588,0,0,1-.586.586H16.211a.588.588,0,0,1-.586-.586Zm0,6.25a.588.588,0,0,1,.586-.586h1.953a.588.588,0,0,1,.586.586V21.29a.588.588,0,0,1-.586.586H16.211a.588.588,0,0,1-.586-.586Zm-6.25-6.25a.588.588,0,0,1,.586-.586h1.953a.588.588,0,0,1,.586.586V15.04a.588.588,0,0,1-.586.586H9.961a.588.588,0,0,1-.586-.586Zm0,6.25a.588.588,0,0,1,.586-.586h1.953a.588.588,0,0,1,.586.586V21.29a.588.588,0,0,1-.586.586H9.961a.588.588,0,0,1-.586-.586Zm-6.25-6.25a.588.588,0,0,1,.586-.586H5.664a.588.588,0,0,1,.586.586V15.04a.588.588,0,0,1-.586.586H3.711a.588.588,0,0,1-.586-.586Zm0,6.25a.588.588,0,0,1,.586-.586H5.664a.588.588,0,0,1,.586.586V21.29a.588.588,0,0,1-.586.586H3.711a.588.588,0,0,1-.586-.586ZM19.532,3.125H17.188V.781A.784.784,0,0,0,16.407,0H14.844a.784.784,0,0,0-.781.781V3.125H7.813V.781A.784.784,0,0,0,7.031,0H5.469a.784.784,0,0,0-.781.781V3.125H2.344A2.344,2.344,0,0,0,0,5.469V7.813H21.876V5.469A2.344,2.344,0,0,0,19.532,3.125Z" transform="translate(15.562 12.98)" fill="#fff"/>
+  </g>
+</svg>

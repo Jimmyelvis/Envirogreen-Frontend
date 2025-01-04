@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53" height="54" viewBox="0 0 53 54">
+  <defs>
+    <filter id="Ellipse_4" x="0" y="0" width="53" height="54" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.104" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#35ebbd"/>
+      <stop offset="1" stop-color="#1ca180"/>
+    </linearGradient>
+    <filter id="Ellipse_5" x="4" y="4" width="45" height="45" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur-2"/>
+      <feFlood flood-opacity="0.161" result="color-2"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color-2"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_84" data-name="Rectangle 84" width="26.793" height="21.264" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="garage-icon" transform="translate(0 0.485)">
+    <g data-type="innerShadowGroup">
+      <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="26.5" cy="27" rx="26.5" ry="27" transform="translate(0 -0.485)" fill="rgba(117,161,185,0.23)" opacity="0.85"/>
+      <g transform="matrix(1, 0, 0, 1, 0, -0.49)" filter="url(#Ellipse_4)">
+        <ellipse id="Ellipse_4-3" data-name="Ellipse 4" cx="26.5" cy="27" rx="26.5" ry="27" fill="#fff" opacity="0.85"/>
+      </g>
+    </g>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="23.5" cy="23.5" r="23.5" transform="translate(3 2.515)" fill="#fff"/>
+    <g data-type="innerShadowGroup">
+      <circle id="Ellipse_5-2" data-name="Ellipse 5" cx="22.5" cy="22.5" r="22.5" transform="translate(4 3.515)" fill="url(#linear-gradient)"/>
+      <g transform="matrix(1, 0, 0, 1, 0, -0.49)" filter="url(#Ellipse_5)">
+        <circle id="Ellipse_5-3" data-name="Ellipse 5" cx="22.5" cy="22.5" r="22.5" transform="translate(4 4)" fill="#fff"/>
+      </g>
+    </g>
+    <g id="Group_104" data-name="Group 104" transform="translate(13.094 15.813)">
+      <rect id="Rectangle_83" data-name="Rectangle 83" width="17.436" height="0.851" transform="translate(4.687 9.285)" fill="#fff"/>
+      <path id="Path_82" data-name="Path 82" d="M13.406,0,26.811,6.472V8.321H24.962V21.264H22.189V8.321H4.623V21.264H1.849V8.321H0V6.472Z" transform="translate(0 0)" fill="#fff"/>
+      <g id="Group_70" data-name="Group 70" transform="translate(0.009 0.071)">
+        <g id="Group_69" data-name="Group 69" clip-path="url(#clip-path)">
+          <path id="Path_83" data-name="Path 83" d="M937.5,1692.585a1.848,1.848,0,0,1,1.493-1.813l.468-1.871a1.849,1.849,0,0,1,1.794-1.4h5.433a1.849,1.849,0,0,1,1.794,1.4l.468,1.871a1.848,1.848,0,0,1,1.493,1.813v2.311h-.924v.924a.462.462,0,0,1-.462.462H947.67a.462.462,0,0,1-.462-.462v-.924h-6.472v.924a.462.462,0,0,1-.462.462h-1.387a.462.462,0,0,1-.462-.462v-.924H937.5Zm2.773-.462h-.924a.462.462,0,0,0,0,.925h.924a.462.462,0,1,0,0-.925m7.4.925h.924a.462.462,0,1,0,0-.925h-.924a.462.462,0,1,0,0,.925m-5.547.924h3.7v-.853a.534.534,0,0,0-.534-.534h-2.631a.534.534,0,0,0-.534.534Z" transform="translate(-930.575 -1675.09)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

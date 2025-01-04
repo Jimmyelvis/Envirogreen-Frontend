@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56" height="56" viewBox="0 0 56 56">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#1bc197"/>
+      <stop offset="1" stop-color="#0e614c"/>
+    </linearGradient>
+    <filter id="Ellipse_25" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="change-photo" transform="translate(9.315 6)">
+    <g transform="matrix(1, 0, 0, 1, -9.31, -6)" filter="url(#Ellipse_25)">
+      <g id="Ellipse_25-2" data-name="Ellipse 25" transform="translate(9 6)" stroke="#15765d" stroke-width="1" fill="url(#linear-gradient)">
+        <circle cx="19" cy="19" r="19" stroke="none"/>
+        <circle cx="19" cy="19" r="18.5" fill="none"/>
+      </g>
+    </g>
+    <path id="Icon_awesome-edit" data-name="Icon awesome-edit" d="M15.276,3.16,18.7,6.583a.371.371,0,0,1,0,.524l-8.287,8.287-3.521.391a.738.738,0,0,1-.816-.816l.391-3.521L14.753,3.16A.371.371,0,0,1,15.276,3.16Zm6.147-.869L19.572.44a1.484,1.484,0,0,0-2.095,0L16.134,1.783a.371.371,0,0,0,0,.524l3.423,3.423a.371.371,0,0,0,.524,0l1.343-1.343a1.484,1.484,0,0,0,0-2.095ZM14.571,13.14V17H2.428V4.86h8.72a.467.467,0,0,0,.323-.133L12.988,3.21a.455.455,0,0,0-.323-.778H1.821A1.822,1.822,0,0,0,0,4.253V17.609a1.822,1.822,0,0,0,1.821,1.821H15.178A1.822,1.822,0,0,0,17,17.609V11.622a.456.456,0,0,0-.778-.323L14.7,12.817A.467.467,0,0,0,14.571,13.14Z" transform="translate(9 8.992)" fill="#ffcf80"/>
+  </g>
+</svg>

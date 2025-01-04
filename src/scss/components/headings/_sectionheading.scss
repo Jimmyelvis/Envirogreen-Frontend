@@ -1,0 +1,28 @@
+.sectionheading {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+
+  .left-bar {
+    width: 0.8rem;
+    display: block;
+    height: auto;
+    background: $primary
+  }
+
+  .headings{
+    
+    .mainheading {
+      color: $secondary;
+      font-size: 3.5rem;
+    }
+
+    .subheading {
+      font-size: 2.2rem;
+    }
+    
+
+  }
+
+
+}

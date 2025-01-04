@@ -1,0 +1,41 @@
+/* Add this to your CSS file */
+
+.slider-content-item {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider-content-item.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.slider-content {
+  position: relative;
+  min-height: 300px; /* Adjust based on your content */
+}
+
+
+// Slide in out version
+
+// .slider-content-item {
+//   opacity: 0;
+//   visibility: hidden;
+//   position: absolute;
+//   transition: all 0.5s ease-in-out;
+//   transform: translateX(100%); /* Start off-screen to the right */
+// }
+
+// .slider-content-item.active {
+//   opacity: 1;
+//   visibility: visible;
+//   position: relative;
+//   transform: translateX(0); /* Slide into place */
+// }
+
+// .slider-content-item.inactive-left {
+//   transform: translateX(-100%); /* Move off-screen to the left when inactive */
+// }

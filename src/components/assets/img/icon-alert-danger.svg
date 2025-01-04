@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 42 42">
+  <g id="icon-alert-danger" transform="translate(6.274 5.5)">
+    <circle id="Ellipse_180" data-name="Ellipse 180" cx="21" cy="21" r="21" transform="translate(-6.274 -5.5)" fill="rgba(255,255,255,0.38)"/>
+    <path id="Path_4" data-name="Path 4" d="M4.7,4.092a15,15,0,0,0-.61,21.2q.15.159.3.313A15,15,0,1,0,4.7,4.092ZM7.58,10.548l2.969-2.969L15,12.033l4.454-4.454,2.97,2.969L17.973,15l4.454,4.453-2.97,2.97L15,17.971,10.55,22.426,7.58,19.456,12.034,15Z" transform="translate(-0.001 0)" fill="#fff"/>
+  </g>
+</svg>

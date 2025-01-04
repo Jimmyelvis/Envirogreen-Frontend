@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="102" height="102" viewBox="0 0 102 102">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#40e1b5"/>
+      <stop offset="1" stop-color="#0ea179"/>
+    </linearGradient>
+    <filter id="Rectangle_714" x="0" y="0" width="102" height="102" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.38"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="icon-quote" transform="translate(-254 6)">
+    <g transform="matrix(1, 0, 0, 1, 254, -6)" filter="url(#Rectangle_714)">
+      <rect id="Rectangle_714-2" data-name="Rectangle 714" width="84" height="84" rx="12" transform="translate(9 6)" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Icon_awesome-quote-right" data-name="Icon awesome-quote-right" d="M32.625,2.25h-9A3.376,3.376,0,0,0,20.25,5.625v9A3.376,3.376,0,0,0,23.625,18H29.25v4.5a4.5,4.5,0,0,1-4.5,4.5h-.562A1.683,1.683,0,0,0,22.5,28.688v3.375a1.683,1.683,0,0,0,1.688,1.688h.563A11.247,11.247,0,0,0,36,22.5V5.625A3.376,3.376,0,0,0,32.625,2.25Zm-20.25,0h-9A3.376,3.376,0,0,0,0,5.625v9A3.376,3.376,0,0,0,3.375,18H9v4.5A4.5,4.5,0,0,1,4.5,27H3.938A1.683,1.683,0,0,0,2.25,28.688v3.375A1.683,1.683,0,0,0,3.938,33.75H4.5A11.247,11.247,0,0,0,15.75,22.5V5.625A3.376,3.376,0,0,0,12.375,2.25Z" transform="translate(286.8 24)" fill="#fff"/>
+  </g>
+</svg>

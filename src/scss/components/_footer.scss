@@ -1,0 +1,124 @@
+footer {
+  grid-column: full-start / full-end;
+  background: rgba(255, 255, 255, 0.46);
+  border-top: rgba(245,225,179,0.35) 3px solid;
+  display: grid;
+  padding: 5rem 0;
+
+  @include gridTempColumn;
+
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-bottom: 3rem;
+    grid-column: col-start 2 / col-end 11;
+
+    &::after{
+      content: " ";
+      border-bottom: 1px solid rgba(107, 122, 158, 0.20);
+      width: 82%;
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      bottom: 0;
+    }
+
+    @include respond(bp-medium) {
+      gap: 3rem;
+    }
+
+    @include respond(bp-small) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .entry {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 33%;
+      align-items: center;
+
+      @include respond(bp-small) {
+        width: 80%;
+        margin-bottom: 8rem;
+        text-align: center;
+      }
+
+      h3{
+        color: $primary;
+        margin-bottom: 2rem;
+        font-size: 2.8rem;
+      }
+
+      p{
+        width: 80%;
+
+        @include respond(bp-medium){
+          width: 100%;
+        }
+      }
+
+      ul{
+     
+        li{
+          display: flex;
+          margin-bottom: 1.5rem;
+          font-weight: bold;
+          align-items: center;
+          gap: 3rem;
+
+          .ftr-icon {
+            width: 3rem !important;
+            height: 3rem !important;
+          }
+
+          .ftr-phone {
+            width: 3rem !important;
+            height: 3rem !important;
+          }
+
+          .ftr-address {
+            width: 3rem !important;
+            height: 3rem !important;
+          }
+        }
+      }
+
+      .links {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        row-gap: 1.3rem;
+        column-gap: 4.3rem;
+      }
+    }
+
+    .entry:last-of-type {
+
+       @include respond(bp-small) {
+         margin-bottom: 0;
+       }
+    }
+  }
+
+  .copycontain {
+
+     &::after {
+       content: " ";
+       border-bottom: 0 solid rgba(107, 122, 158, 0.20);
+       width: 0;
+       display: none;
+     }
+
+    .copyright {
+      padding: 4rem 0 0 0;
+      margin: 0 auto;
+      font-weight: bold;
+  
+      .greentxt {
+        color: $primary;
+      }
+    }
+  }
+}
