@@ -27,6 +27,8 @@ const Blog = () => {
     dispatch(fetchCategories());
   }, [dispatch]);
 
+
+
   return (
     <Layout>
       <div className="single-blog">
