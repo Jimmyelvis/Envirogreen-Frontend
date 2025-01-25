@@ -10,7 +10,7 @@ import {
 } from '@/reduxstore/slices/blogSlice';
 import Link from 'next/link';
 import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
-import { BlogCard } from '@/components/ui/cards/BlogCard';
+import { BlogCard } from '@/components/ui/cards/blogCard';
 import { Button } from '@/components/ui/buttons';
 import { useModal } from '@/components/ui/Modal/hooks/useModal';
 import { Panel } from '@/components/ui/Panel';

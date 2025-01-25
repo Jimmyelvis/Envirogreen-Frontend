@@ -11,7 +11,7 @@ import { Sectionheading } from '@/components/ui/headings/Sectionheading';
 import { Select } from '@/components/ui/select';
 import { useRouter } from 'next/router';
 import { BlogCard } from '@/components/ui/cards/blogCard';
-import { Pagination } from '@/components/ui/pagination';
+import { Pagination } from '@/components/ui/Pagination';
 import { debounce } from '@/utils/debounce';
 import { Panel } from '@/components/ui/Panel';
 import {

@@ -13,7 +13,7 @@ import Modal  from '@/components/ui/Modal';
 import { Sectionheading } from '@/components/ui/headings/Sectionheading';
 import { Admin_ListingCard } from '@/components/ui/cards/adminlistingCard';
 import { Filters } from '@/components/pages/dashboard/Listings/Filters';
-import { Select } from '@/components/ui/Select';
+import { Select } from '@/components/ui/select';
 import { Filter_Bubble } from '@/components/ui/Filter_Bubble';
 
 import { useRouter } from 'next/router';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
-import { DashboardContent } from './DashboardContent';
 
 export const DashLayout = ({ children }) => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Nav } from './Nav';
-import { Footer } from './Footer';
+import { Footer } from './footer';
 import ScrollButton from './ScrollButton';
 
 const Layout = ({ children }) => {
