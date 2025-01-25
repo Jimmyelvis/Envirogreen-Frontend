@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Layout from "@/components/ui/Layout";
 import { useDispatch } from "react-redux";
-import { loginUser } from "@/ReduxStore/slices/userSlice";
+import { loginUser } from "@/reduxstore/slices/userSlice";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({ email: "", password: "" });
