@@ -2,6 +2,7 @@ import { network } from '@/helpers/constants';
 import { HYDRATE } from 'next-redux-wrapper';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { createAlert } from '@/reduxstore/slices/uiSlice';
+import { updateWishlist, getUsersWishlist } from '@/reduxstore/slices/userSlice';
 
 export const createListing = createAsyncThunk(
   'listings/createListing',
@@ -491,6 +492,85 @@ export const adjustFeaturedListings = createAsyncThunk(
     }
   }
 );
+
+// Async thunk for handling wishlist API calls
+export const addToWishlist = createAsyncThunk(
+  'listings/addToWishlist',
+  async (propertyId, { rejectWithValue, dispatch }) => {
+    try {
+      const response = await fetch(`${network.api}add-to-wishList/${propertyId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+        // credentials: 'include'
+      });
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        dispatch(createAlert(data.error || 'Failed to update wishlist', 'danger'));
+        return rejectWithValue(data.error);
+      }
+
+      if (data.success) {
+        dispatch(createAlert(data.success, 'success'));
+      } else {
+        dispatch(createAlert(data.error, 'danger'));
+      }
+
+      dispatch(getUsersWishlist());
+      
+     
+    } catch (error) {
+      console.error('Wishlist error:', error);
+      dispatch(createAlert(error.message, 'danger'));
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+//Async thunk for removing a listing from wishlist
+export const removeFromWishlist = createAsyncThunk(
+  'listings/removeFromWishlist',
+  async (propertyId, { rejectWithValue, dispatch }) => {
+    try {
+      const response = await fetch(`${network.api}wishlist/${propertyId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        dispatch(createAlert(data.error || 'Failed to update wishlist', 'danger'));
+        return rejectWithValue(data.error);
+      }
+
+      if (data.success) {
+        dispatch(createAlert(data.success, 'success'));
+      } else {
+        dispatch(createAlert(data.error, 'danger'));
+      }
+
+         dispatch(getUsersWishlist());
+
+      
+    } catch (error) {
+      console.error('Wishlist error:', error);
+      dispatch(createAlert(error.message, 'danger'));
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
 
 // Initial state for the listing slice
 const initialState = {

@@ -1,5 +1,5 @@
 import { network } from '@/helpers/constants';
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import { createAlert } from '@/reduxstore/slices/uiSlice';
 
 // Async thunk for fetching user data
@@ -104,18 +104,45 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// const initialState = {
-//     user: null,
-//     token: null,
-//     status: 'idle',
-//     error: null,
-// };
+export const getUsersWishlist = createAsyncThunk(
+  'user/getUsersWishlist',
+  async (userId, thunkAPI) => {
+    try {
+      const response = await fetch(`${network.api}user/wishlist`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data.message || 'Failed to get wishlist');
+      }
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message || 'An error occurred');
+    }
+  }
+);
+
+export const updateWishlist = (propertyId, actionType) =>  (dispatch) => {
+
+  dispatch(updateUserWishlist({ propertyId, actionType }));
+  // dispatch(createAlert('Wishlist updated', 'success'));
+}
+
+
 
 const initialState = {
   user: null,
   token: null,
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
+  userWishList: [],
 };
 
 // Initialize state from local storage
@@ -139,10 +166,17 @@ const userSlice = createSlice({
       state.user = null;
       state.token = null;
       state.status = 'idle';
+      state.userWishList = [];
     },
     resetStatus(state) {
       state.status = 'idle';
     },
+  updateUserWishlist(state, action) {
+    const { propertyId, actionType } = action.payload;
+    if (actionType === 'added') {
+      state.user.push({ property_id: propertyId });
+    }
+  },
   },
   extraReducers: (builder) => {
     builder
@@ -177,6 +211,17 @@ const userSlice = createSlice({
       .addCase(fetchUser.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
+      })
+      .addCase(getUsersWishlist.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getUsersWishlist.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.userWishList = action.payload;
+      })
+      .addCase(getUsersWishlist.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
       });
   },
 });
@@ -184,5 +229,5 @@ const userSlice = createSlice({
 export const selectIsAuthenticated = (state) => !!state.user.token;
 export const selectCurrentUser = (state) => state.user.user;
 
-export const { logout, resetStatus } = userSlice.actions;
+export const { logout, resetStatus,updateUserWishlist } = userSlice.actions;
 export default userSlice.reducer;

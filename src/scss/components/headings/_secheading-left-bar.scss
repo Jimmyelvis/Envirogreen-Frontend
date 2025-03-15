@@ -29,12 +29,12 @@
   }
 
   .mainheading {
-    font-size: 4rem;
+    font-size: clamp(3.5rem, 3vw + 1rem, 6rem);
     color: $secondary;
   }
 
   .subheading {
-    font-size: 2.9rem;
+    font-size: clamp(2.4rem, 2vw + 1rem, 3.1rem);
     color: $primary;
   }
 }

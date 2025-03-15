@@ -1,6 +1,7 @@
 .light-box {
   grid-column: col-start 1 / col-end 12;
   min-height: 76vh;
+  padding: 5rem;
 
   .listing-detail_images {
     display: grid;

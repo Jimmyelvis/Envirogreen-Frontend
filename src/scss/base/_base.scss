@@ -10,6 +10,11 @@ img {
   width: 100%;
 }
 
+:root {
+  --nav-btn-margin: 16rem;
+
+}
+
 
 // RESPONSIVE BREAKPOINTS
 $bp-largest: 75em; // 1200px
@@ -119,4 +124,11 @@ blockquote {
   border-left: $thirdcolor 3px solid;
   padding-left: 2rem;
   margin-left: 5rem;
+}
+
+
+@include respond(bp-large) {
+  :root {
+    --nav-btn-margin: 13rem;
+  }
 }

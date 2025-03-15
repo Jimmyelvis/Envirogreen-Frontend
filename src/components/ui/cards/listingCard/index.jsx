@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { network } from '@/helpers/constants';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { Panel } from '@/components/ui/Panel';
 import Area_icon from '@/components/assets/img/area-icon.svg';
 import Sq_Ruler from '@/components/assets/img/sq-green-ruler.svg';
@@ -17,7 +18,9 @@ import Phone from '@/components/assets/img/phone-icon.svg';
 import { imgsrc, parseExtraPhotos } from '@/utils/getImgsrc';
 import { formatPrice } from '@/utils/formatInfo';
 
+
 export const ListingCard = ({ listing, nohover }) => {
+
   /*
     A Listing may have have an older version of the extra photos array
     where each extra photo is stored in a separate field. This function
@@ -56,6 +59,9 @@ export const ListingCard = ({ listing, nohover }) => {
       </>
     );
   };
+
+
+
 
   return (
     <div className="listingCard">
@@ -128,6 +134,7 @@ export const ListingCard = ({ listing, nohover }) => {
       */}
       {!nohover && (
         <div className="listingCard-back">
+     
           <Panel className="listingCard-back_details">
             <div className="agent">
               <Avatar avatar={listing.user?.avatar} />

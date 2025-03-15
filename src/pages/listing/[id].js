@@ -27,7 +27,9 @@ import Modal from '@/components/ui/Modal';
 import {
   setListing,
   fetchNearbyListings,
+  addToWishlist, removeFromWishlist
 } from '@/reduxstore/slices/listingSlice';
+import { getUsersWishlist } from '@/reduxstore/slices/userSlice';
 import { Sectionheading } from '@/components/ui/headings/Sectionheading';
 import { Sectionheading_left_bar } from '@/components/ui/headings/Sectionheading_left_bar';
 import { imgsrc, parseExtraPhotos } from '@/utils/getImgsrc';
@@ -36,12 +38,15 @@ import { Avatar } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/buttons';
 import renderHTML from 'react-render-html';
 import { formatPrice, formatPhoneNumber } from '@/utils/formatInfo';
+import Bookmark_icon from '@/components/assets/img/bookmark-icon.svg';
+import Bookmark_icon_filled from '@/components/assets/img/bookmark-icon-filled.svg';
 
 const Listing = ({ id }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const { singleListing, listings, nearByListings, nearByListingsCount } =
     useSelector((state) => state.listings);
+  const { user, userWishList } = useSelector((state) => state.user);
 
   const [singleImg, setSingleImg] = useState(null);
   const [additionalImages, setAdditionalImages] = useState([]);
@@ -52,6 +57,33 @@ const Listing = ({ id }) => {
    */
   const [modalTarget, setModalTarget] = useState(null);
   const [origin, setOrigin] = useState(null);
+
+  const [hasBook, sethasBook] = useState(null);
+
+  const handleWishlistClick = async () => {
+    if (!user) {
+      dispatch(createAlert('Please login to manage your wishlist', 'warning'));
+      return;
+    }
+
+    if (!hasBook) {
+
+    try {
+      await dispatch(addToWishlist(singleListing.id)).unwrap();
+      sethasBook(!hasBook);
+    } catch (error) {
+      console.error('Wishlist update failed:', error);
+    }
+
+    } else {
+      try {
+        await dispatch(removeFromWishlist(singleListing.id)).unwrap();
+        sethasBook(!hasBook);
+      } catch (error) {
+        console.error('Wishlist update failed:', error);
+      }
+    }
+  };
 
   /**
    * Check what is the target state, then determine
@@ -298,14 +330,28 @@ const Listing = ({ id }) => {
         </div>
 
         <div className="listing-detail_details_bottom">
-          <div className="icons">{getIcons()}</div>
+          <div className="icons">
+            {getIcons()}
+
+            <div className="bookmark">
+              <Image
+                src={hasBook ? Bookmark_icon_filled.src : Bookmark_icon.src}
+                alt="Bookmark"
+                width={54}
+                height={54}
+                unoptimized
+                onClick={handleWishlistClick}
+                className="cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </div>
+          </div>
 
           <div className="description">
             <Sectionheading heading="Description" />
 
             <div className="text">{renderHTML(singleListing?.descrip)}</div>
 
-            <h4
+            {/* <h4
               className="heading-4 readmore"
               onClick={() => {
                 setModalTarget('description');
@@ -314,7 +360,7 @@ const Listing = ({ id }) => {
               }}
             >
               Read More
-            </h4>
+            </h4> */}
           </div>
 
           <div className="agent">
@@ -383,6 +429,7 @@ const Listing = ({ id }) => {
               )}
             </ul>
           </div>
+          
         </div>
       </div>
     );
@@ -537,6 +584,19 @@ const Listing = ({ id }) => {
     );
   };
 
+  useEffect(() => {
+    const hasBookmark = userWishList.some(
+      (wishlist) =>
+        parseInt(wishlist.property_id, 10) === parseInt(singleListing.id, 10)
+    );
+
+    if (hasBookmark) {
+      sethasBook(true);
+    } else {
+      sethasBook(false);
+    }
+  }, [singleListing, userWishList,dispatch]);
+
   // Use useEffect to update additionalImages when singleListing changes
   useEffect(() => {
     const houseImages = parseExtraPhotos(singleListing);
@@ -547,7 +607,11 @@ const Listing = ({ id }) => {
         excludeId: singleListing.id,
       })
     );
-  }, [router.query.id]);
+  }, [dispatch, router.query.id, singleListing]);
+
+  useEffect(() => {
+    dispatch(getUsersWishlist());
+  }, [dispatch]);
 
   return (
     <Layout>

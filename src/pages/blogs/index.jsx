@@ -3,7 +3,11 @@ import Link from 'next/link';
 import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
 import Layout from '@/components/ui/Layout';
 import { useDispatch, useSelector } from 'react-redux';
-import { setBlogs, fetchCategories, fetchFeaturedBlogs } from '@/reduxstore/slices/blogSlice';
+import {
+  setBlogs,
+  fetchCategories,
+  fetchFeaturedBlogs,
+} from '@/reduxstore/slices/blogSlice';
 import { wrapper } from '@/reduxstore/store';
 import { network } from '@/helpers/constants';
 import { Sectionheading_left_bar } from '@/components/ui/headings/Sectionheading_left_bar';
@@ -20,6 +24,7 @@ import {
   circleLoader,
 } from '@/components/ui/Loaders';
 import Search_icon from '@/components/assets/img/search-icon.svg';
+import { CategoryPanel } from '@/components/pages/blog/CategoryPanel';
 
 const Blogs = () => {
   const router = useRouter();
@@ -71,58 +76,51 @@ const Blogs = () => {
   };
 
   const getBlogs = () => {
-    return data
-      .filter((post) => post.featured === 0)
-      .sort((a, b) => a.created_at - b.created_at)
-      .map((post) => <BlogCard post={post} key={post.id} />);
-  };
-
-  const getCategories = () => {
-    return (
-      <Panel className="categories-panel">
-        <Sectionheading heading="Categories" />
-
-        {categories.map((category) => (
-          <li key={category.id}>
-            <Link href={`/blogs/${category.id}`}>{category.category_name}</Link>
-
-            <p className="count">
-              {category.blog_posts_count}
-              {category.blog_posts_count === 1 ? ' post' : ' posts'}
-            </p>
-          </li>
-        ))}
-      </Panel>
-    );
+    if (data) {
+      return data
+        .filter((post) => post.featured === 0)
+        .sort((a, b) => a.created_at - b.created_at)
+        .map((post) => <BlogCard post={post} key={post.id} />);
+    }
   };
 
   return (
     <Layout>
       <div className="blogs-pg">
-        <div className="feature-section">
-          <Sectionheading_left_bar
-            heading="Writings from our team"
-            subheading="The latest industry news, and resources"
-          />
 
-          {getFeatured()}
-        </div>
+        {data !== undefined && data !== null && data.length > 0 ? (
+          <>
+            <div className="feature-section">
+              <Sectionheading_left_bar
+                heading="Writings from our team"
+                subheading="The latest industry news, and resources"
+              />
+            </div>
 
-        <div className="blogs-section">
-          <TextFieldGroup
-            placeholder="Search Blogs"
-            name="search"
-            value=""
-            // onChange={() => {}}
-            icon={Search_icon}
-            iconPosition="right"
-            classes={'search-input'}
-          />
+            <div className="blogs-section">
+              {/* <TextFieldGroup
+                placeholder="Search Blogs"
+                name="search"
+                value=""
+                // onChange={() => {}}
+                icon={Search_icon}
+                iconPosition="right"
+                classes={'search-input'}
+              /> */}
 
-          <div className="blogs">{getBlogs()}</div>
+              <div className="blogs">{getBlogs()}</div>
 
-          <div className="filters">{getCategories()}</div>
-        </div>
+              <div className="filters">
+                <CategoryPanel categories={categories} />
+              </div>
+            </div>
+          </>
+        ) : (
+          <div className="loading">
+            {fadingDotsLoader()}
+          </div>
+        )}
+   
       </div>
     </Layout>
   );
@@ -130,13 +128,14 @@ const Blogs = () => {
 
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) => async () => {
+    // store.dispatch(setBlogs({ data: [], count: 0 }));
     const response = await fetch(`${network.api}blogs`);
     const data = await response.json();
 
-    console.log('data:', data);
+    console.log('data: from blogs js', data);
 
-    console.log('called');
     store.dispatch(setBlogs(data));
+    console.log('called inside Blogs.js');
   }
 );
 

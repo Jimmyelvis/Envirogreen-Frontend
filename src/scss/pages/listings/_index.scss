@@ -1,6 +1,6 @@
 .listing-pg {
   grid-column: full-start/full-end;
-  margin-top: $nav-btn-margin;
+  margin-top: var(--nav-btn-margin);
   display: flex;
   position: relative;
 
@@ -13,15 +13,17 @@
     display: none;
 
     @include respond(bp-large) {
-      background: rgb(255 255 255 / 27%);
+      background: rgb(255 255 255 / 36%);
       position: fixed;
       width: 100%;
       padding: 2rem 0;
       display: grid;
       grid-template-columns: [full-start] minmax(4.5rem, 1fr) [center-start] repeat(12, [col-start] minmax(2rem, 14rem) [col-end]) [center-end] minmax(4.5rem, 1fr) [full-end];
       z-index: 1000;
-      top: 10.1rem;
+      top: 12.9rem;
       transition: all 600ms ease-in-out;
+      align-items: center;
+      border-bottom: 1px solid #d3d3d3;
 
       &-scrolled {
         background-color: rgb(255 254 252);
@@ -30,10 +32,14 @@
 
       .mobile-filters-btn {
         grid-column: col-start 1/col-end 12;
-        font-size: 2.3rem;
+        font-size: 1.9rem;
         justify-self: end;
       }
      
+    }
+
+    @include respond(bp-small) {
+      top: 9.9rem;
     }
   }
 
@@ -357,9 +363,13 @@
     border-top: 1px solid rgb(170 119 83 / 10%);
 
     @include respond(bp-large) {
-     background: none;
-     margin-top: 8rem;
-     padding-bottom: 15%;
+      background: none;
+      margin-top: 0rem;
+      padding-bottom: 15%;
+      border-top-left-radius: revert;
+      border-left: revert;
+      border-top: revert;
+      padding-top: revert;
     }
 
     .top {
@@ -373,6 +383,12 @@
         grid-column: 1 / 13;
         padding: 3rem 9rem;
         flex-wrap: wrap;
+      }
+
+      @include respond(bp-small) {
+        grid-column: 2/12;
+        flex-wrap: wrap;
+        padding: revert;
       }
 
       .sectionheading-left-bar {

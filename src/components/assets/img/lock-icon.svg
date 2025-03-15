@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.75" height="36" viewBox="0 0 33.75 36">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#30e5b7"/>
+      <stop offset="1" stop-color="#14a17e"/>
+    </linearGradient>
+    <filter id="lock-icon" x="0" y="0" width="33.75" height="36" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#lock-icon)">
+    <path id="lock-icon-2" data-name="lock-icon" d="M14.063,7.875h-.844V5.344a5.344,5.344,0,1,0-10.688,0V7.875H1.688A1.688,1.688,0,0,0,0,9.563v6.75A1.688,1.688,0,0,0,1.688,18H14.063a1.688,1.688,0,0,0,1.688-1.688V9.563A1.688,1.688,0,0,0,14.063,7.875Zm-3.656,0H5.344V5.344a2.531,2.531,0,0,1,5.063,0Z" transform="translate(9 6)" fill="url(#linear-gradient)"/>
+  </g>
+</svg>

@@ -9,10 +9,14 @@ $margin-top-tablet: 8rem;
   display: grid;
   grid-template-columns: subgrid;
   column-gap: 5rem;
-  margin-top: $nav-btn-margin;
+  margin-top: var(--nav-btn-margin);
 
   @include respond(bp-large) {
     margin: 0;
+  }
+
+  @include respond(bp-small) {
+    column-gap: 2rem;
   }
 
   .listing-detail_images {
@@ -33,14 +37,18 @@ $margin-top-tablet: 8rem;
     .listing-detail_images_mainphoto {
       background: burlywood;
       grid-column: col-start 1 / col-end 12;
-      height: 72rem;
+      min-height: 72rem;
       position: relative;
-      border-radius: 1.2rem;
+      // border-radius: 1.2rem;
       overflow: hidden;
 
       @include respond(bp-large) {
         grid-column: full-start / full-end;
-        height: 82rem;
+        min-height: 82rem;
+      }
+
+      @include respond(bp-small) {
+        min-height: 62rem;
       }
 
       .main-img {
@@ -203,9 +211,25 @@ $margin-top-tablet: 8rem;
       justify-content: space-between;
 
       @include respond(bp-small) {
-        display: unset;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 5rem;
+
+        .sectionheading-left-bar {
+          grid-column: 1 / -1;
+  
+          .mainheading {
+            font-size: 3.5rem;
+          }
+  
+          .subheading {
+            font-size: 2.5rem;
+          }
+        }
+
       }
 
+  
       .price {
         background: linear-gradient(to bottom, lighten($primary, 10%), darken($primary, 5%));
         color: #fff;
@@ -216,9 +240,10 @@ $margin-top-tablet: 8rem;
         border-radius: 1rem;
 
         @include respond(bp-small) {
-          width: 20rem;
-          text-align: center;
-          margin-bottom: 5rem;
+          justify-self: end;
+          font-size: 2.6rem;
+          padding: 1.2rem 2.6rem;
+          width: unset;
         }
       }
     }
@@ -228,6 +253,7 @@ $margin-top-tablet: 8rem;
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: 8rem max-content;
       gap: 2rem;
+      align-items: start;
 
       @include respond(bp-small) {
         grid-template-rows: repeat(2, max-content);
@@ -242,6 +268,7 @@ $margin-top-tablet: 8rem;
 
         @include respond(bp-small) {
           flex-wrap: wrap;
+          gap: 3rem;
         }
 
         .icon {
@@ -252,6 +279,11 @@ $margin-top-tablet: 8rem;
           .icon-img {
             width: 6rem !important;
             height: 6rem !important;
+
+            @include respond(bp-smallest) {
+              width: 5rem !important;
+              height: 5rem !important;
+            }
           }
 
           .value {
@@ -263,6 +295,11 @@ $margin-top-tablet: 8rem;
 
       }
 
+      .bookmark {
+        cursor: pointer;
+    
+      }
+
       .description {
         grid-row: 2 / -1;
         grid-column: 1 / 6;
@@ -270,7 +307,7 @@ $margin-top-tablet: 8rem;
         padding: 5rem;
         font-size: 1.7rem;
         line-height: 1.6;
-        position: relative;
+        display: grid;
 
         @media only screen and (max-width: 93.75em) {
           grid-column: 1/6;
@@ -294,19 +331,20 @@ $margin-top-tablet: 8rem;
         }
 
         .text {
-          @include lineClamp(7);
 
-          p {
-            margin-bottom: 2rem;
+          @include respond(bp-large) {
+           display: unset;
           }
         }
 
         .readmore {
-          position: absolute;
-          bottom: 3rem;
-          right: 7rem;
-
           cursor: pointer;
+          margin-top: 3rem;
+          justify-self: end;
+
+          @include respond(bp-large) {
+            display: none;
+          }
         }
 
       }
@@ -448,10 +486,18 @@ $margin-top-tablet: 8rem;
       row-gap: 3.5rem;
       column-gap: 2rem;
 
+      @include respond(bp-small) {
+        grid-template-columns: 1fr;
+      }
+
       .form-group {
         display: flex;
         flex-direction: column;
         gap: 0.6rem;
+
+        @include respond(bp-small) {
+          grid-column: 1 / -1;
+        }
 
         .control-label {
           font-weight: bold;
@@ -469,6 +515,10 @@ $margin-top-tablet: 8rem;
         justify-self: end;
         grid-column: 2 / -1;
         padding: 1.3rem 2rem;
+
+        @include respond(bp-small) {
+          grid-column: 1 / -1;
+        }
       }
 
     }

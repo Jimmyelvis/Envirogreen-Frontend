@@ -1,6 +1,6 @@
 .single-blog {
   display: grid;
-  margin-top: $nav-btn-margin;
+  margin-top: var(--nav-btn-margin);
   grid-column: col-start 2 / col-end 11;
   grid-template-rows: 55rem max-content;
   row-gap: 10rem;

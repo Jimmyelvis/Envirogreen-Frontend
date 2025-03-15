@@ -1,5 +1,185 @@
 .auth-modal {
-  grid-column: col-start 3 / col-end 10;
-  min-height: 60rem;
-  padding: 8rem;
+  grid-column: col-start 2 / col-end 11;
+  display: flex;
+  gap: 2rem;
+  min-height: 80rem;
+  padding: 7rem;
+
+  @media screen and (max-width: 87.5rem) {
+    grid-column: col-start 1 / col-end 12;
+  }
+
+  @include respond(bp-large) {
+    flex-direction: column;
+    min-height: 98rem;
+    padding: unset;
+    overflow: hidden;
+  }
+
+  .auth-modal-crl-logo {
+    display: none;
+
+    @include respond(bp-large) {
+      position: absolute;
+      z-index: 500;
+      height: 20rem !important;
+      width: 20rem !important;
+      top: 5rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+  }
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @include respond(bp-large) {
+      order: 2;
+      max-width: fit-content;
+      margin: 5rem auto;
+    }
+
+    .auth-modal-logo {
+      width: 24.6rem !important;
+      margin-bottom: 7.8rem;
+    }
+
+    .auth-heading {
+      font-size: 4rem;
+      margin-bottom: 3.1rem;
+    }
+
+    form {
+      max-width: 41rem;
+      display: grid;
+      margin-bottom: 3.4rem;
+
+      .field-group-with-icon .inputField-icon {
+        position: absolute;
+        width: 4.5rem !important;
+        height: 4.5rem !important;
+        top: 55%;
+        left: 4%;
+        transform: translateY(-50%);
+        cursor: pointer;
+      }
+
+      .auth-submit-btn {
+        margin-top: 2.7rem;
+        justify-self: end;
+      }
+    }
+
+    .auth-form-switch {
+      font-size: 2.4rem;
+      font-family: $font-bold;
+
+      span.click-here {
+        cursor: pointer;
+        color: $primary;
+      }
+    }
+  }
+
+  .right {
+    flex: 1;
+
+    @include respond(bp-large) {
+      order: 1;
+    }
+
+    .right_img {
+      position: relative;
+
+      @include respond(bp-large) {
+        height: 50rem;
+      }
+
+      .mobile-wordmark {
+        display: none;
+
+        @include respond(bp-large) {
+          display: block;
+          position: absolute;
+          bottom: 0rem;
+          background: #ffffff;
+          z-index: 50;
+          height: 9rem;
+          width: 38.3rem;
+          border-top-right-radius: 9rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding-left: 3rem;
+        }
+
+        .heading-3 {
+          font-size: 2.6rem;
+          color: #415e8f;
+        }
+
+        .heading-4 {
+          font-size: 2.2rem;
+        }
+
+      }
+
+    }
+
+    .login_shape {
+      /* Give the container some size */
+      width: 100%;
+      height: clamp(30rem, 56vh + 3rem, 69rem);
+      position: absolute;
+
+      mask: url("../../components/assets/img/login_shape.svg") no-repeat center/contain;
+      -webkit-mask: url("../../components/assets/img/login_shape.svg") no-repeat center/contain;
+      background: url("../../components/assets/img/living-room-auth-modal-bg.jpg") no-repeat center/cover;
+
+      @include respond(bp-large) {
+        position: relative;
+        height: 100%;
+        mask: unset;
+        -webkit-mask: unset;
+        display: flex;
+        justify-content: center;
+        align-items: anchor-center;
+      }
+
+      @include overlay(rgba(0, 0, 0, 0.3));
+
+      .overlay {
+        background: linear-gradient(to bottom, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 74%) 100%);
+      }
+
+      .auth-form-tagline {
+        position: absolute;
+        z-index: 100;
+        bottom: 25%;
+        left: 14%;
+        font-size: clamp(3rem, calc(2vw + 2rem), 8rem);
+        color: $white;
+
+        @include respond(bp-large) {
+          display: none;
+        }
+      }
+
+      .auth-form-tagline-mobile {
+        
+        display: none;
+
+        @include respond(bp-large) {
+          z-index: 100;
+          font-size: clamp(3rem, 4vw + 2rem, 8rem);
+          color: $white;
+          display: block;
+        }
+      }
+    }
+  }
 }

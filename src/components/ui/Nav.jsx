@@ -102,7 +102,7 @@ export const Nav = () => {
       );
     } else {
       return (
-        <p
+        <li
           onClick={() => {
             dispatch(openModal('login'));
             setModalTarget('login');
@@ -113,7 +113,7 @@ export const Nav = () => {
           className="auth"
         >
           Login
-        </p>
+        </li>
       );
     }
   };
@@ -298,6 +298,8 @@ export const Nav = () => {
                   )}
                 </li>
               ))}
+
+              {checkAuthStatus()}
             </ul>
 
             <div className={`overlay ${overlayActive ? 'active' : ''}`}></div>
