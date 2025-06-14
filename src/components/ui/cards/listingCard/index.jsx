@@ -35,7 +35,7 @@ export const ListingCard = ({ listing, nohover }) => {
     return (
       <>
         <ul>
-          {extraPhotos.slice(0, limit).map((photo, index) => {
+          {extraPhotos?.slice(0, limit).map((photo, index) => {
             // const src =
             //   listing.extraphotos !== null ? photo : `${network.img}/${photo}`;
             return (
@@ -136,7 +136,7 @@ export const ListingCard = ({ listing, nohover }) => {
         <div className="listingCard-back">
      
           <Panel className="listingCard-back_details">
-            <div className="agent">
+            <div className="agent_details">
               <Avatar avatar={listing.user?.avatar} />
 
               <div className="agent_info">
@@ -204,7 +204,7 @@ export const ListingCard = ({ listing, nohover }) => {
 
             <div className="listingCard-back_bottom">
               <div className="listingCard-back_extraPhotos">
-                {getExtraPhotos()}
+                {/* {getExtraPhotos()} */}
               </div>
 
               <h4 className="heading-4 listingCard-back_more-info">

@@ -1,7 +1,7 @@
 // useModal.js
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { openModal, closeModal } from '@/reduxstore/slices/uiSlice';
+import { openModal, closeModal, setModalContent } from '@/reduxstore/slices/uiSlice';
 
 export function useModal() {
   const dispatch = useDispatch();
@@ -14,6 +14,7 @@ export function useModal() {
     setModalTarget(target);
     setOrigin(originKey);
     dispatch(openModal(originKey));
+    // dispatch(setModalContent(target));
   };
 
   const closeModalTarget = () => {
@@ -21,16 +22,6 @@ export function useModal() {
     setModalTarget(null);
     setOrigin(null);
   };
-
-   // If you want, you can add side effects or other logic here
-  // For example, remove body overflow when modal is closed:
-  // useEffect(() => {
-  //   if (isModalOpen) {
-  //     document.body.classList.add('overflow');
-  //   } else {
-  //     document.body.classList.remove('overflow');
-  //   }
-  // }, [isModalOpen]);
 
   return {
     isModalOpen,

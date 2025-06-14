@@ -74,7 +74,8 @@ const rootReducer = (state, action) => {
                 ...state.ui,
                 ...action.payload.ui,
                 isModalOpen: state.ui.isModalOpen || action.payload.ui.isModalOpen, // Preserve modal state
-                modalContent: state.ui.modalContent || action.payload.ui.modalContent, // Preserve modal content
+                modalContent: state.ui.modalContent , // Preserve modal content
+                mobileBgOn: state.ui.mobileBgOn || action.payload.ui.mobileBgOn, // Preserve mobile background
             };
         }
         if (state.settings) {

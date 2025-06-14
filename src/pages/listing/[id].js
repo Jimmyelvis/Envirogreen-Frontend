@@ -40,6 +40,7 @@ import renderHTML from 'react-render-html';
 import { formatPrice, formatPhoneNumber } from '@/utils/formatInfo';
 import Bookmark_icon from '@/components/assets/img/bookmark-icon.svg';
 import Bookmark_icon_filled from '@/components/assets/img/bookmark-icon-filled.svg';
+import { AgentCard } from '@/components/pages/listing/agaentCard';
 
 const Listing = ({ id }) => {
   const dispatch = useDispatch();
@@ -363,73 +364,10 @@ const Listing = ({ id }) => {
             </h4> */}
           </div>
 
-          <div className="agent">
-            <Avatar avatar={singleListing.user_photo_path} classes="avatar" />
+          <AgentCard
+            singleListing={singleListing}
+          />
 
-            <Sectionheading_left_bar
-              heading={singleListing.user?.name}
-              subheading={singleListing.user_role}
-            />
-
-            <ul className="agent_socials">
-              {singleListing.user?.facebook && (
-                <li>
-                  <Image
-                    src={FaceebookIcon}
-                    alt="Facebook icon"
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  />
-
-                  <p>{singleListing.user?.facebook}</p>
-                </li>
-              )}
-
-              {singleListing.user?.twitter && (
-                <li>
-                  <Image
-                    src={TwitterIcon}
-                    alt="Twitter icon"
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  />
-
-                  <p>{singleListing.user?.twitter}</p>
-                </li>
-              )}
-
-              {singleListing.user?.email && (
-                <li>
-                  <Image
-                    src={EmailIcon}
-                    alt="Email icon"
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  />
-
-                  <p>{singleListing.user?.email}</p>
-                </li>
-              )}
-
-              {singleListing.user?.phone && (
-                <li>
-                  <Image
-                    src={PhoneIcon}
-                    alt="Phone icon"
-                    width={500}
-                    height={500}
-                    layout="responsive"
-                  />
-
-                  <p>{formatPhoneNumber(singleListing.user?.phone)}</p>
-                </li>
-              )}
-            </ul>
-          </div>
-          
         </div>
       </div>
     );

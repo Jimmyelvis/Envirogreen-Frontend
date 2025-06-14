@@ -129,6 +129,114 @@ export const getUsersWishlist = createAsyncThunk(
   }
 );
 
+export const getUserSaves = createAsyncThunk(
+  'user/getUserSaves',
+  async (userId, thunkAPI) => {
+    try {
+      const response = await fetch(`${network.api}user/saved-searches`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        return data;
+      } else {
+        return thunkAPI.rejectWithValue(data.message || 'Failed to get saves');
+      }
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message || 'An error occurred');
+    }
+  }
+);
+
+export const saveSearch = createAsyncThunk(
+  'user/saveSearch',
+  async (searchData, { dispatch, rejectWithValue }) => {
+    try {
+      const response = await fetch(`${network.api}user/saved-searches`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify(searchData),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        dispatch(createAlert('Save created', 'success'));
+        return data;
+      } else {
+        return rejectWithValue(data.message || 'Failed to save search');
+      }
+    } catch (error) {
+      return rejectWithValue(error.message || 'An error occurred');
+    }
+  }
+);
+
+export const updateSaveSearch = createAsyncThunk(
+  'user/updateSaveSearch',
+  async ({id, searchOptions}, { dispatch, rejectWithValue }) => {
+    try {
+      const response = await fetch(`${network.api}user/saved-searches/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify(searchOptions),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        dispatch(createAlert('Save updated', 'success'));
+        return data;
+      } else {
+        return rejectWithValue(data.error || 'Failed to update save');
+      }
+    } catch (error) {
+      return rejectWithValue(error.message || 'An error occurred');
+    }
+  }
+);
+
+
+
+
+export const deleteuserSave = createAsyncThunk(
+  'user/deleteuserSave',
+  async (saveId, { dispatch, rejectWithValue }) => {
+    try {
+      const response = await fetch(`${network.api}user/saved-searches/${saveId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        dispatch(createAlert('Save deleted', 'success'));
+        return data;
+      } else {
+        return rejectWithValue(data.message || 'Failed to delete save');
+      }
+    } catch (error) {
+      return rejectWithValue(error.message || 'An error occurred');
+    }
+  }
+);
+
 export const updateWishlist = (propertyId, actionType) =>  (dispatch) => {
 
   dispatch(updateUserWishlist({ propertyId, actionType }));
@@ -143,6 +251,7 @@ const initialState = {
   status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
   userWishList: [],
+  userSaves: [],
 };
 
 // Initialize state from local storage
@@ -222,7 +331,34 @@ const userSlice = createSlice({
       .addCase(getUsersWishlist.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
-      });
+      })
+      .addCase(getUserSaves.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(getUserSaves.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.userSaves = action.payload.data;
+      })
+      .addCase(getUserSaves.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+      })
+      .addCase(deleteuserSave.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(deleteuserSave.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.userSaves = state.userSaves.filter(
+          (save) => save.id !== action.payload.id
+        );
+      })
+      .addCase(deleteuserSave.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+      })
+      .addCase(updateSaveSearch.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+      })
   },
 });
 

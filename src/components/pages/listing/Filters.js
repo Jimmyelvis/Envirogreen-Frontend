@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Select } from '@/components/ui/select';
 import Image from 'next/image';
+import { saveSearch } from '@/reduxstore/slices/userSlice';
 import Housebtn from '@/components/assets/img/house-btn.svg';
 import Apartbtn from '@/components/assets/img/apart-btn.svg';
 import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
+import { useModal } from '@/components/ui/Modal/hooks/useModal';
+import Modal from '@/components/ui/Modal';
+import { Panel } from '@/components/ui/Panel';
+import { Sectionheading } from '@/components/ui/headings/Sectionheading';
+import { Saved_Search_Dialog } from './filters/save_search_dialog';
+import { useSelector } from 'react-redux';
+import {
+  selectCurrentUser,
+  selectIsAuthenticated,
+  logout,
+} from '@/reduxstore/slices/userSlice';
 
 export const Filters = ({
   states,
@@ -35,7 +47,20 @@ export const Filters = ({
   setMinPrice,
   perpage,
   setPerPage,
+  routerFilters,
+  searchName,
+  searchId,
 }) => {
+  const { modalTarget, origin, openModalTarget, closeModalTarget } = useModal();
+
+  const { data: listings } = useSelector((state) => state.listings.listings);
+
+  const [savedSearchOptions, setSavedSearchOptions] = useState({});
+
+  const isAuthenticated = useSelector(selectIsAuthenticated);
+
+  const [hasMounted, setHasMounted] = useState(false);
+  const currentUser = useSelector(selectCurrentUser);
 
   /*
     The getState function will be used to get the name of the state from the states array. It will find by id match to the state id in the query. If it finds a match, it will return the name of the state. If it does not find a match, it will return undefined.
@@ -58,9 +83,78 @@ export const Filters = ({
     }
   };
 
+  const saveSearchOptions = () => {
+    let searchImg;
+
+    if (listings.length > 0) {
+      if (listings[0].main_photo !== null) {
+        searchImg = listings[0].main_photo;
+      } else {
+        searchImg = listings[0].fullpic_path;
+      }
+    }
+
+    let searchOptions = {
+      img: searchImg,
+    };
+
+    /*
+      Our Laravel backend expects the following query parameters below
+      which are slightly different from the ones that gets set into router.query, so we not only need to get the values from router.query but also need to map them to the correct query parameters that our backend expects.
+    */
+    Object.keys(router.query).forEach((key) => {
+      switch (key) {
+        case 'state':
+          searchOptions['state_id'] = router.query[key];
+          break;
+        case 'loc':
+          searchOptions['city_id'] = router.query[key];
+          break;
+        case 'min':
+          searchOptions['price_min'] = router.query[key];
+          break;
+        case 'max':
+          searchOptions['price_max'] = router.query[key];
+          break;
+        case 'beds':
+          searchOptions['beds'] = router.query[key];
+          break;
+        case 'baths':
+          searchOptions['baths'] = router.query[key];
+          break;
+        case 'cat':
+          searchOptions['category_id'] = router.query[key];
+          break;
+        default:
+          break;
+      }
+    });
+
+    setSavedSearchOptions(searchOptions);
+
+    console.log('searchOptions', searchOptions);
+  };
+
+  const checkTarget = () => {
+    if (modalTarget === 'saveSearch') {
+      return (
+        <Saved_Search_Dialog
+          searchOptions={savedSearchOptions}
+          savedSearchName={searchName}
+          searchId={searchId}
+          debouncedRouterPush={debouncedRouterPush}
+        />
+      );
+    }
+  };
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
   return (
     <div className="listings-pg_filters">
-      <h2 className="heading-2 filters-label_main">Filters</h2>
+      {/* <h2 className="heading-2 filters-label_main">Filters</h2> */}
 
       <div className="property-types">
         <h3 className="heading-3 filters-label">Property Type</h3>
@@ -162,7 +256,7 @@ export const Filters = ({
           className="price-range_slider"
           min={0}
           max={500000}
-          value={minPrice}
+          value={router.query.min || minPrice}
           onChange={handleMinPriceChange}
         />
         <input
@@ -170,7 +264,7 @@ export const Filters = ({
           className="price-range_slider max-slider"
           min={0}
           max={500000}
-          value={maxPrice}
+          value={router.query.max || 500000}
           onChange={handleMaxPriceChange}
         />
 
@@ -180,7 +274,7 @@ export const Filters = ({
             name="min"
             className="form-control range-value"
             onChange={handleMinPriceChange}
-            value={minPrice}
+            value={router.query.min || minPrice}
           />
           <div className="dash"></div>
           <input
@@ -188,7 +282,7 @@ export const Filters = ({
             name="max"
             className="form-control range-value"
             onChange={handleMaxPriceChange}
-            value={maxPrice}
+            value={router.query.max || maxPrice}
           />
         </div>
       </div>
@@ -200,7 +294,7 @@ export const Filters = ({
           {[1, 2, 3, 4, 5].map((num) => (
             <li
               key={num}
-              className={bedsNum === num ? 'active' : ''}
+              className={router.query.beds == num ? 'active' : ''}
               onClick={() => setBeds(num)}
             >
               {num}
@@ -216,7 +310,7 @@ export const Filters = ({
           {[1, 2, 3, 4, 5].map((num) => (
             <li
               key={num}
-              className={bathsNum === num ? 'active' : ''}
+              className={router.query.baths == num ? 'active' : ''}
               onClick={() => setBaths(num)}
             >
               {num}
@@ -246,6 +340,23 @@ export const Filters = ({
       >
         Reset Filters
       </button>
+
+      {isAuthenticated && hasMounted && (
+        <button
+          className="btn btn-secondary btn-secondary-grad mt-12"
+          onClick={() => {
+            saveSearchOptions();
+            openModalTarget('saveSearch', 'saveSearch');
+          }}
+        >
+          Save Search
+        </button>
+      )}
+
+
+      <Modal modalTarget={modalTarget} origin={origin} selector={'#root_modal'}>
+        {checkTarget()}
+      </Modal>
     </div>
   );
 };

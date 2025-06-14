@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62" height="62" viewBox="0 0 62 62">
+  <defs>
+    <filter id="Ellipse_192" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+    </filter>
+    <filter id="Ellipse_192-2" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#929e50" flood-opacity="0.302" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="edit-pencil-shadow" transform="translate(-1437 -397)">
+    <g data-type="innerShadowGroup">
+      <g transform="matrix(1, 0, 0, 1, 1437, 397)" filter="url(#Ellipse_192)">
+        <g id="Ellipse_192-3" data-name="Ellipse 192" transform="translate(9 6)" fill="none" stroke="#f5efd9" stroke-width="1">
+          <circle cx="22" cy="22" r="22" stroke="none"/>
+          <circle cx="22" cy="22" r="21.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 1437, 397)" filter="url(#Ellipse_192-2)">
+        <circle id="Ellipse_192-4" data-name="Ellipse 192" cx="22" cy="22" r="22" transform="translate(9 6)" fill="#fff"/>
+      </g>
+      <g id="Ellipse_192-5" data-name="Ellipse 192" transform="translate(1446 403)" fill="none" stroke="#f5efd9" stroke-width="1">
+        <circle cx="22" cy="22" r="22" stroke="none"/>
+        <circle cx="22" cy="22" r="21.5" fill="none"/>
+      </g>
+    </g>
+    <path id="Icon_material-edit-shadow" data-name="Icon material-edit-shadow" d="M0,11.08v2.915H3.892L15.371,5.4,11.479,2.482ZM18.381,3.143a.646.646,0,0,0,0-1.1L15.953.227a1.291,1.291,0,0,0-1.463,0L12.59,1.65l3.892,2.915,1.9-1.423Z" transform="matrix(0.921, 0.391, -0.391, 0.921, 1460.984, 422.837)" fill="#27434b" opacity="0.14"/>
+    <path id="Icon_material-edit" data-name="Icon material-edit" d="M4.5,22.8v4.815H9.55l14.893-14.2L19.393,8.6ZM28.348,9.687a1.237,1.237,0,0,0,0-1.811l-3.151-3a1.388,1.388,0,0,0-1.9,0l-2.464,2.35,5.05,4.815Z" transform="translate(1450.742 409.515)" fill="#0c9874"/>
+  </g>
+</svg>

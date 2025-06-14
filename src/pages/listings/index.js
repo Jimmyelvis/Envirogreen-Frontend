@@ -81,7 +81,8 @@ const Listings = () => {
         <Panel className={'mobile-filters-display'}>
           <Sectionheading_left_bar
             heading={`Total Listings (${total})`}
-            subheading={`Listings on this page: ${listings.length}`}
+            subheading={
+              `Listings on this page: ${listings.length}`}
           />
 
           <Filters
@@ -319,6 +320,10 @@ const Listings = () => {
           return;
         }
 
+        if (key === "searchid") {
+          return;
+        }
+
         if (key === 'loc') {
           if (selectedCity === '' && routerFilters[key] === '') {
             return;
@@ -391,6 +396,23 @@ const Listings = () => {
                   cat: '',
                 });
               }}
+            />
+          );
+        }
+
+        if (key === 'searchname') {
+          return (
+            <Filter_Bubble
+              key={key}
+              dark
+              noClose
+              filter={
+                <>
+                  Editing:{' '}
+                  {routerFilters[key]}
+                </>
+              }
+              
             />
           );
         }
@@ -488,7 +510,6 @@ const Listings = () => {
           sort,
         });
 
-        console.log('queryParams:', queryParams.toString());
 
         const response = await fetch(
           `${network.api}listings/multisearch?${queryParams.toString()}`
@@ -511,7 +532,6 @@ const Listings = () => {
     });
   };
 
-  console.log("routerfilters", routerFilters);
   
 
   return (
@@ -565,6 +585,8 @@ const Listings = () => {
           setMaxPrice={setMaxPrice}
           perpage={perPage}
           setPerPage={setPerPage}
+          searchName={router.query.searchname}
+          searchId={router.query.searchid}
         />
 
         <div className="listings-pg_listings-section">

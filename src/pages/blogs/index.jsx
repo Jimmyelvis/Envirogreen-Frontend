@@ -95,6 +95,8 @@ const Blogs = () => {
                 heading="Writings from our team"
                 subheading="The latest industry news, and resources"
               />
+
+              { getFeatured() }
             </div>
 
             <div className="blogs-section">

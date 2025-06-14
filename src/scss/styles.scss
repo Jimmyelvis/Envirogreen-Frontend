@@ -41,6 +41,7 @@
 @import "pages/admin/_admin_home";
 @import "pages/admin/blogs/_all-blogs";
 @import "pages/admin/blogs/_create";
+@import "pages/_contact";
 @import "pages/admin/staff/_all_staff";
 @import "pages/admin/staff/_admin_staff_detail";
 @import "pages/admin/listings/_all-listings";
@@ -60,11 +61,13 @@
 @import "pages/blogs/_index";
 @import "pages/blogs/_blog-detail";
 @import "pages/listings/_index";
+@import "pages/listings/_agent";
 @import "pages/listings/_listing-detail";
 @import "pages/staff/_ourBackground";
 @import "pages/staff/_staffHeader";
 @import "pages/staff/_staffPage";
 @import "pages/staff/_staffDetail";
+@import "pages/user/_usersaves";
 
 
 

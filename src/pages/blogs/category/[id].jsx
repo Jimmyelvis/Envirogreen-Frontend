@@ -69,7 +69,7 @@ const Blogcategory = () => {
   return (
     <Layout>
       <div className="blogs-pg">
-        {posts !== undefined && posts !== null && posts.length > 0 ? (
+        {posts !== undefined && posts !== null ? (
           <>
             <div className="feature-section">
               {name !== undefined && name !== null && name !== '' ? (

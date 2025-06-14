@@ -36,6 +36,9 @@ const uiSlice = createSlice({
       state.isModalOpen = false;
       state.modalContent = "";
     },
+    setModalContent: (state, action) => {
+      state.modalContent = action.payload;
+    },
     setAlert: (state, action) => {
       // const id = uuidv4(); // Generate a unique ID for the alert
       
@@ -51,6 +54,6 @@ const uiSlice = createSlice({
   },
 });
 
-export const { setMobileBgOn, setMobileBgOff, openModal, closeModal, setAlert, removeAlert, clearAlerts } = uiSlice.actions;
+export const { setMobileBgOn, setMobileBgOff, openModal, closeModal,setModalContent, setAlert, removeAlert, clearAlerts } = uiSlice.actions;
 
 export default uiSlice.reducer;

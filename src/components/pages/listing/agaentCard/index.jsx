@@ -8,7 +8,7 @@ import TwitterIcon from '@/components/assets/img/twitter-icon.svg';
 import EmailIcon from '@/components/assets/img/email-icon.svg';
 import PhoneIcon from '@/components/assets/img/phone-icon.svg';
 
-export const ProfileCard = ({
+export const AgentCard = ({
   singleListing,
 }) => {
   return (

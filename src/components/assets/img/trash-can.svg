@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62" height="62" viewBox="0 0 62 62">
+  <defs>
+    <filter id="Ellipse_191" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+    </filter>
+    <filter id="Ellipse_191-2" x="0" y="0" width="62" height="62" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-color="#929e50" flood-opacity="0.302" result="color"/>
+      <feComposite operator="out" in="SourceGraphic" in2="blur-2"/>
+      <feComposite operator="in" in="color"/>
+      <feComposite operator="in" in2="SourceGraphic"/>
+    </filter>
+    <filter id="Icon_awesome-trash-alt" x="13.364" y="12.341" width="34.903" height="37.318" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-3"/>
+      <feFlood flood-color="#e8ca99"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="trash-can" transform="translate(-1591.13 -389.13)">
+    <g data-type="innerShadowGroup">
+      <g transform="matrix(1, 0, 0, 1, 1591.13, 389.13)" filter="url(#Ellipse_191)">
+        <g id="Ellipse_191-3" data-name="Ellipse 191" transform="translate(9 6)" fill="none" stroke="#f5efd9" stroke-width="1">
+          <circle cx="22" cy="22" r="22" stroke="none"/>
+          <circle cx="22" cy="22" r="21.5" fill="none"/>
+        </g>
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 1591.13, 389.13)" filter="url(#Ellipse_191-2)">
+        <circle id="Ellipse_191-4" data-name="Ellipse 191" cx="22" cy="22" r="22" transform="translate(9 6)" fill="#fff"/>
+      </g>
+      <g id="Ellipse_191-5" data-name="Ellipse 191" transform="translate(1600.13 395.13)" fill="none" stroke="#f5efd9" stroke-width="1">
+        <circle cx="22" cy="22" r="22" stroke="none"/>
+        <circle cx="22" cy="22" r="21.5" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 1591.13, 389.13)" filter="url(#Icon_awesome-trash-alt)">
+      <path id="Icon_awesome-trash-alt-2" data-name="Icon awesome-trash-alt" d="M1.207,17.507a1.811,1.811,0,0,0,1.811,1.811H13.885A1.811,1.811,0,0,0,15.7,17.507V4.829H1.207ZM11.47,7.848a.6.6,0,1,1,1.207,0V16.3a.6.6,0,1,1-1.207,0Zm-3.622,0a.6.6,0,1,1,1.207,0V16.3a.6.6,0,1,1-1.207,0Zm-3.622,0a.6.6,0,1,1,1.207,0V16.3a.6.6,0,1,1-1.207,0ZM16.3,1.207H11.772L11.417.5a.906.906,0,0,0-.811-.5H6.293a.9.9,0,0,0-.807.5l-.355.706H.6a.6.6,0,0,0-.6.6V3.018a.6.6,0,0,0,.6.6H16.3a.6.6,0,0,0,.6-.6V1.811A.6.6,0,0,0,16.3,1.207Z" transform="translate(22.36 18.34)" fill="#ffcf80"/>
+    </g>
+  </g>
+</svg>
