@@ -11,6 +11,7 @@ import Twitter_icon from '@/components/assets/img/twitter-icon.svg';
 import Youtube_icon from '@/components/assets/img/youtube-icon.svg';
 import Dad_kids from '@/components/assets/img/photos/dad-kids.jpg';
 import Keys_table from '@/components/assets/img/photos/keys-table.jpg';
+import Header_imgs from '@/components/assets/img/photos/header-imgs.png';
 import { Button } from '@/components/ui/buttons';
 import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
 import { TextAreaFieldGroup } from '@/components/ui/form/TextAreaFieldGroup';
@@ -111,6 +112,17 @@ const Contact = () => {
             animate={fadeIn.animate}
             transition={{ ...fadeIn.transition, delay: 0.2 }}
           >
+            <div className="header-imgs">
+              <Image
+                src={Header_imgs}
+                alt="Header Images"
+                width={800}
+                height={400}
+                layout="responsive"
+                className="header-imgs__image"
+              />
+            </div>
+            
             <div className="image-stack">
               <Image
                 src={Dad_kids}
