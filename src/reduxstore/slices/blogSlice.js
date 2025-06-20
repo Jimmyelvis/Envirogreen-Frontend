@@ -243,6 +243,7 @@ export const adjustFeaturedBlogs = createAsyncThunk(
 
 const initialState = {
   blogs: null,
+  blogByCategory: [],
   adminBlogs: [],
   singleBlog: null,
   status: 'idle',
@@ -276,6 +277,9 @@ const blogSlice = createSlice({
     },
     setBlog: (state, action) => {
       state.singleBlog = action.payload
+    },
+    setBlogByCategory: (state, action) => {
+      state.blogByCategory = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -421,6 +425,6 @@ const blogSlice = createSlice({
   }
 });
 
-export const { clearSingleBlog, resetEditStatus, resetCreationStatus, setBlog, setBlogs } = blogSlice.actions;
+export const { clearSingleBlog, resetEditStatus, resetCreationStatus, setBlog, setBlogs, setBlogByCategory } = blogSlice.actions;
 
 export default blogSlice.reducer;

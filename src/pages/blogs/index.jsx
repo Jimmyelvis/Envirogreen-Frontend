@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Link from 'next/link';
-import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
 import Layout from '@/components/ui/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -11,23 +9,13 @@ import {
 import { wrapper } from '@/reduxstore/store';
 import { network } from '@/helpers/constants';
 import { Sectionheading_left_bar } from '@/components/ui/headings/Sectionheading_left_bar';
-import { Sectionheading } from '@/components/ui/headings/Sectionheading';
-import { Select } from '@/components/ui/select';
-import { useRouter } from 'next/router';
 import { BlogCard } from '@/components/ui/cards/blogCard';
-import { Pagination } from '@/components/ui/Pagination';
-import { debounce } from '@/utils/debounce';
-import { Panel } from '@/components/ui/Panel';
 import {
-  squareLoader,
   fadingDotsLoader,
-  circleLoader,
 } from '@/components/ui/Loaders';
-import Search_icon from '@/components/assets/img/search-icon.svg';
 import { CategoryPanel } from '@/components/pages/blog/CategoryPanel';
 
 const Blogs = () => {
-  const router = useRouter();
   const dispatch = useDispatch();
 
   const blogs = useSelector((state) => state.blogs.blogs);

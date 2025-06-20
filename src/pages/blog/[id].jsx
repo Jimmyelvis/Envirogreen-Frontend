@@ -13,10 +13,9 @@ import Twitter_icon from '@/components/assets/img/twitter-icon.svg';
 import Email_icon from '@/components/assets/img/email-icon.svg';
 import Phone_icon from '@/components/assets/img/phone-icon.svg';
 import { Sectionheading } from '@/components/ui/headings/Sectionheading';
-import renderHTML from "react-render-html";
 import { FadeUp } from '@/utils/animation/framer/FadeUp';
 import parse, { domToReact } from 'html-react-parser';
-
+import { CategoryPanel } from '@/components/pages/blog/CategoryPanel';
 
 const Blog = () => {
   const dispatch = useDispatch();
@@ -26,8 +25,6 @@ const Blog = () => {
   useEffect(() => {
     dispatch(fetchCategories());
   }, [dispatch]);
-
-
 
   return (
     <Layout>
@@ -48,34 +45,13 @@ const Blog = () => {
 
             <p className="short-desc">{post?.short_descp}</p>
 
-            {/* <div
-              className="post-content"
-              // dangerouslySetInnerHTML={{ __html: post?.long_descp }}
-            >
-              <FadeUp
-                delay={0.25}
-                duration={0.5}
-              >
-
-                {renderHTML(post?.long_descp)}
-
-                {
-                  console.log("long dsc",post?.long_descp)
-                }
-              </FadeUp>
-            </div> */}
-
             <div className="post-content">
               {parse(post?.long_descp, {
                 replace: (domNode) => {
                   if (domNode.name === 'p') {
                     // Use domToReact to convert children nodes back to React elements
                     return (
-                      <FadeUp 
-                        delay={0.25} 
-                        duration={1}
-                        classNames="mb-8"
-                      >
+                      <FadeUp delay={0.25} duration={1} classNames="mb-8">
                         {domToReact(domNode.children)}
                       </FadeUp>
                     );
@@ -83,7 +59,6 @@ const Blog = () => {
                 },
               })}
             </div>
-
           </div>
 
           <div className="single-blog_content-details">
@@ -142,23 +117,7 @@ const Blog = () => {
               </ul>
             </Panel>
 
-            <Panel className="categories-panel">
-            <Sectionheading heading="Categories" />
-
-
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <Link href={`/blogs/${category.id}`}>
-                    {category.category_name}
-                  </Link>
-
-                  <p className="count">
-                    {category.blog_posts_count}
-                    {category.blog_posts_count === 1 ? ' post' : ' posts'}
-                  </p>
-                </li>
-              ))}
-            </Panel>
+            <CategoryPanel categories={categories} />
 
             <Panel className="tags-panel">
               <Sectionheading heading="Tags" />

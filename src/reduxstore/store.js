@@ -70,7 +70,8 @@ const rootReducer = (state, action) => {
                 ...state.blogs,
                 ...action.payload.blogs,
                 status: 'loading',
-                blogs: action.payload.blogs.blogs ?? state.blogs.blogs, // Preserve blogs
+                blogs: state.blogs.blogs || action.payload.blogs.blogs,
+                // blogs: action.payload.blogs.blogs ?? state.blogs.blogs, // Preserve blogs
                 singleBlog: action.payload.blogs.singleBlog ?? state.blogs.singleBlog,
                 categories: state.blogs.categories || action.payload.blogs.categories, // Preserve categories
                 authors: state.blogs.authors || action.payload.blogs.authors, // Preserve authors
