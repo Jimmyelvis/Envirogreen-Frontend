@@ -115,6 +115,12 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
     // console.log('called');
     store.dispatch(setBlogByCategory(data));
+
+    return {
+      props: {
+        data,
+      },
+    };
   }
 );
 
