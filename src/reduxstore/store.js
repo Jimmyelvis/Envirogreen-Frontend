@@ -47,24 +47,35 @@ const rootReducer = (state, action) => {
             };
             
         }
+        // if (state.blogs) {
+        //     nextState.blogs = {
+        //         ...state.blogs,
+        //         ...action.payload.blogs,
+        //         status: 'loading',
+        //     };
+        // }
+        // if (state.contact) {
+        //     nextState.contact = {
+        //         ...state.contact,
+        //         ...action.payload.contact,
+        //         submitStatus: state.contact.submitStatus, // Preserve submit status during hydration
+        //         blogs: action.payload.blogs.blogs ?? state.blogs.blogs, // Preserve blogs
+        //         singleBlog: action.payload.blogs.singleBlog ?? state.blogs.singleBlog,
+        //         categories: state.blogs.categories || action.payload.blogs.categories, // Preserve categories
+        //         authors: state.blogs.authors || action.payload.blogs.authors, // Preserve authors
+        //     };
+        // }   
         if (state.blogs) {
             nextState.blogs = {
                 ...state.blogs,
                 ...action.payload.blogs,
                 status: 'loading',
-            };
-        }
-        if (state.contact) {
-            nextState.contact = {
-                ...state.contact,
-                ...action.payload.contact,
-                submitStatus: state.contact.submitStatus, // Preserve submit status during hydration
                 blogs: action.payload.blogs.blogs ?? state.blogs.blogs, // Preserve blogs
                 singleBlog: action.payload.blogs.singleBlog ?? state.blogs.singleBlog,
                 categories: state.blogs.categories || action.payload.blogs.categories, // Preserve categories
                 authors: state.blogs.authors || action.payload.blogs.authors, // Preserve authors
             };
-        }   
+        }  
         if (state.user) {
             nextState.user = {
                 ...state.user,
