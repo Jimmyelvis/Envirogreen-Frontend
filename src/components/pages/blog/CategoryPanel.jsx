@@ -17,20 +17,31 @@ export const CategoryPanel = (
       dispatch(fetchCategories());
     }, [dispatch]);
 
+  const getCategories = () => {
+    if (categories) {
+
+      const activeCategories = categories.filter((category) => category.blog_posts_count > 0);
+
+      return activeCategories.map((category) => (
+        <li key={category.id}>
+          <Link href={`/blogs/category/${category.id}`}>{category.category_name}</Link>
+
+          <p className="count">
+            {category.blog_posts_count}
+            {category.blog_posts_count === 1 ? ' post' : ' posts'}
+          </p>
+        </li>
+      ));
+    }
+  };
+
   return (
     <Panel className="categories-panel">
     <Sectionheading heading="Categories" />
 
-    {categories.map((category) => (
-      <li key={category.id}>
-        <Link href={`/blogs/category/${category.id}`}>{category.category_name}</Link>
-
-        <p className="count">
-          {category.blog_posts_count}
-          {category.blog_posts_count === 1 ? ' post' : ' posts'}
-        </p>
-      </li>
-    ))}
+    {
+      getCategories()
+    }
   </Panel>
   )
 }

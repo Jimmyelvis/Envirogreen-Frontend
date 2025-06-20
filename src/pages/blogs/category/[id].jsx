@@ -34,8 +34,8 @@ const Blogcategory = () => {
     if (data) {
       let newPosts = [...data];
 
-      return newPosts
-        .sort((a, b) => a.created_at - b.created_at)
+      return data
+        // .sort((a, b) => a.created_at - b.created_at)
         .map((post) => {
           return <BlogCard post={post} key={post.id} />;
         });

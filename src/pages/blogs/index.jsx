@@ -32,7 +32,7 @@ const Blogs = () => {
   const getFeatured = () => {
     const featuredPosts = featuredBlogs
       .filter((post) => post.featured > 0)
-      .sort((a, b) => a.featured - b.featured);
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
     return (
       <div className="featured-posts">
@@ -67,7 +67,7 @@ const Blogs = () => {
     if (data) {
       return data
         .filter((post) => post.featured === 0)
-        .sort((a, b) => a.created_at - b.created_at)
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
         .map((post) => <BlogCard post={post} key={post.id} />);
     }
   };

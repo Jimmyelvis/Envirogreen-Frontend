@@ -2,7 +2,7 @@
 
 const nextConfig = {
   images: {
-    domains: ['res.cloudinary.com', 'images.pexels.com', process.env.NEXT_PUBLIC_HOSTNAME],
+    domains: ['res.cloudinary.com', 'images.pexels.com', 'mlmontheweb.com', process.env.NEXT_PUBLIC_HOSTNAME],
     // Optionally, you might specify other configurations such as device sizes or image sizes here
   },
   typescript: {
