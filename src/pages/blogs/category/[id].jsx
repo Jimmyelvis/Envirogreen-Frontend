@@ -113,7 +113,7 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
     console.log('data:', data);
 
-    console.log('called');
+    // console.log('called');
     store.dispatch(setBlogByCategory(data));
   }
 );
