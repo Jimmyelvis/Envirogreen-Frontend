@@ -19,7 +19,7 @@ export const Footer = () => {
     },
     { href: '/listings', label: 'Listings' },
     { href: '/blogs', label: 'Blog' },
-    { href: '#', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
     // { href: '#', label: 'Login', className: 'login' },
   ];
 

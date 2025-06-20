@@ -26,7 +26,7 @@ import { useRouter } from 'next/router';
 import useScrollProgress from './ScrollButton/hooks/useScrollProgress';
 
 export const Nav = () => {
-  // const limit = 115;
+
 
   /*
       Check to see if if the component has mounted on the client.
@@ -58,7 +58,7 @@ export const Nav = () => {
     },
     { href: '/listings', label: 'Listings' },
     { href: '/blogs', label: 'Blogs' },
-    { href: '#', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   /**

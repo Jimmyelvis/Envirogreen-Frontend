@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,14 +17,34 @@ import { Button } from '@/components/ui/buttons';
 import { TextFieldGroup } from '@/components/ui/form/TextFieldGroup';
 import { TextAreaFieldGroup } from '@/components/ui/form/TextAreaFieldGroup';
 import { Panel } from '@/components/ui/Panel';
+import { submitContact, resetSubmitStatus } from '@/reduxstore/slices/contactSlice';
 
 const Contact = () => {
+  const dispatch = useDispatch();
+  const { submitStatus, error } = useSelector((state) => state.contact);
+  const errorMessage = error?.message || error;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   });
+
+  // Reset form when submission is successful
+  useEffect(() => {
+    if (submitStatus === 'succeeded') {
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+      // Reset the submission status after a delay
+      const timer = setTimeout(() => {
+        dispatch(resetSubmitStatus());
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [submitStatus, dispatch]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,8 +56,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
+    dispatch(submitContact(formData));
   };
 
   const fadeIn = {
@@ -99,10 +119,16 @@ const Contact = () => {
               </div>
               <Button
                 type="submit"
-                classes={`btn-primary btn-primary-grad btn-submit`}
+                classes={`btn-primary btn-primary-grad btn-submit ${submitStatus === 'loading' ? 'loading' : ''}`}
+                disabled={submitStatus === 'loading'}
               >
-                Submit
+                {submitStatus === 'loading' ? 'Sending...' : 'Submit'}
               </Button>
+              {/* {errorMessage && (
+                <div className="error-message">
+                  {errorMessage}
+                </div>
+              )} */}
             </form>
           </motion.div>
 

@@ -6,6 +6,8 @@ import staff from './slices/staffSlice';
 import uiReducer from './slices/uiSlice';
 import blogs from './slices/blogSlice';
 import settings from './slices/settingsSlice';
+import contactReducer from './slices/contactSlice';
+import newsLetterReducer from './slices/newsLetterSlice';
 
 const combinedReducer = combineReducers({
     user: userReducer,
@@ -14,6 +16,8 @@ const combinedReducer = combineReducers({
     blogs,
     ui: uiReducer,
     settings,
+    contact: contactReducer,
+    newsLetter: newsLetterReducer,
 });
 
 
@@ -48,6 +52,13 @@ const rootReducer = (state, action) => {
                 ...state.blogs,
                 ...action.payload.blogs,
                 status: 'loading',
+            };
+        }
+        if (state.contact) {
+            nextState.contact = {
+                ...state.contact,
+                ...action.payload.contact,
+                submitStatus: state.contact.submitStatus, // Preserve submit status during hydration
                 blogs: action.payload.blogs.blogs ?? state.blogs.blogs, // Preserve blogs
                 singleBlog: action.payload.blogs.singleBlog ?? state.blogs.singleBlog,
                 categories: state.blogs.categories || action.payload.blogs.categories, // Preserve categories
